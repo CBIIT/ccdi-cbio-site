@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/208.6a99451f.chunk.js","mappings":"qIAMA,UAJoB,WAClB,OAAOA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,oBACd,C","sources":["content/status/Page404.tsx"],"sourcesContent":["import React, { FC } from 'react';\n\nconst Page404: FC = () => {\n  return <div>This is 404 page</div>;\n};\n\nexport default Page404;"],"names":["_jsx","children"],"sourceRoot":""}

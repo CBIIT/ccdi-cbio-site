@@ -10,7 +10,6 @@ interface LayoutProps {
   children?: ReactNode;
 }
 
-
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
@@ -19,7 +18,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&family=Lato:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;900&family=Nunito:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
       <Header />
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" sx={{ minHeight: '600px'}}>
           <Box display="flex">
             {children || <Outlet />}
           </Box>

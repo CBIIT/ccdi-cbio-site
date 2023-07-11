@@ -1,4 +1,4 @@
-# This is a NCI branded Webpage Base 
+# NCI branded Webpage Base (React)
 
 This is a base layout of an NCI branded webpage with configurable header and footer components.
 

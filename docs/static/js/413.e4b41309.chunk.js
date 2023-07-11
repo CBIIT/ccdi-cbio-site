@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkCRDC_Datahub=self.webpackChunkCRDC_Datahub||[]).push([[413],{413:function(e,u,a){a.r(u);a(791);var n=a(184);u.default=function(){return(0,n.jsx)("div",{children:"This is Home Page"})}}}]);
+//# sourceMappingURL=413.e4b41309.chunk.js.map

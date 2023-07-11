@@ -5,6 +5,7 @@ import { Box, Container } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import ScrollButton from '../components/ScrollButton/ScrollButtonView';
 
 interface LayoutProps {
   children?: ReactNode;
@@ -24,6 +25,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           </Box>
         </Container>
       <Footer />
+      <ScrollButton/>
     </>
   );
 };

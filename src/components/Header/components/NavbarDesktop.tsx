@@ -21,6 +21,9 @@ const Nav = styled.div`
       position: relative;
       width: 1400px;
     }
+    .invisible {
+      visibility: hidden;
+    }
  `;
 
 const NavContainer = styled.div`
@@ -149,7 +152,9 @@ const LiSection = styled.li`
       display: none;
     }
   }
-
+  .shouldBeUnderlined {
+    border-bottom: 4px solid #3A75BD;
+  }
   .navTitleClicked {
     display: block;
     color: #FFFFFF;
@@ -311,9 +316,8 @@ const NavBar = () => {
                             onKeyDown={onKeyPressHandler}
                             role="button"
                             tabIndex={0}
-                            className="navText directLink"
+                            className={`navText directLink ${shouldBeUnderlined(navMobileItem.name) ? "shouldBeUnderlined" : ""}`}
                             onClick={handleMenuClick}
-                            style={shouldBeUnderlined(navMobileItem.name) ? { borderBottom: "4px solid #3A75BD" } : null}
                           >
                             {navMobileItem.name}
                           </div>
@@ -328,9 +332,9 @@ const NavBar = () => {
                           id={navMobileItem.id}
                           onKeyDown={onKeyPressHandler}
                           role="button"
-                          tabIndex={0} className={clickedTitle === navMobileItem.name ? 'navText clicked' : 'navText'}
+                          tabIndex={0}
+                          className={`${clickedTitle === navMobileItem.name ? 'navText clicked' : 'navText'} ${shouldBeUnderlined(navMobileItem.name) ? "shouldBeUnderlined" : ""}`}
                           onClick={handleMenuClick}
-                          style={shouldBeUnderlined(navMobileItem.name) ? { borderBottom: "4px solid #3A75BD" } : null}
                         >
                           {navMobileItem.name}
                         </div>
@@ -345,7 +349,7 @@ const NavBar = () => {
           Login
         </StyledLoginLink>
       </NavContainer>
-      <Dropdown ref={dropdownSelection} style={clickedTitle === '' ? { visibility: 'hidden', } : null}>
+      <Dropdown ref={dropdownSelection} className={clickedTitle === ''  ? "invisible" : ""}>
         <DropdownContainer>
           <div className="dropdownList">
             {

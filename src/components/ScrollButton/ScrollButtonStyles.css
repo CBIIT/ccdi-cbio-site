@@ -29,6 +29,16 @@
     display: none;
 }
 
+.hidden {
+    opacity: 0 ;
+    visibility: hidden;
+    cursor: pointer;
+}
+.visible{
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+}
 /*
 Tablet/Phone less than 768 px width and greater than greater than 375
 */

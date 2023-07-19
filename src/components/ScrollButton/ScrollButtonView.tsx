@@ -28,19 +28,7 @@ const ScrollButton = () => {
     <a
       ref={clickToTopRef}
       id="stt"
-      style={
-        scroll < 200
-          ? {
-              opacity: 0,
-              visibility: "hidden",
-              cursor: "pointer"
-            }
-          : {
-              visibility: "visible",
-              opacity: 1,
-              cursor: "pointer"
-            }
-      }
+      className={scroll < 200 ? "hidden" : "visisble"}
     >
       <span id="stt-span">BACK TO TOP</span>
     </a>

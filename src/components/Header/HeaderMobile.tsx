@@ -51,8 +51,8 @@ const HeaderContainer = styled.div`
     // }
 `;
 
-const NavMobileContainer = styled.div`
-    // display: none;
+const NavMobileContainer = styled.div<{ $display?: string; }>`
+    display: ${(props) => props.$display};
     position: absolute;
     left: 0;
     top: 0;
@@ -192,7 +192,7 @@ const Header = () => {
           </div>
         </HeaderContainer>
       </HeaderBanner>
-      <NavMobileContainer style={{ display: navMobileDisplay }}>
+      <NavMobileContainer $display={navMobileDisplay}>
         <MenuArea>
           <div className="menuContainer">
             <div

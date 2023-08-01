@@ -285,10 +285,15 @@ const NavBar = () => {
     link: string;
     className: string;
   };
-  function shouldBeUnderlined(linkName) {
+
+  function shouldBeUnderlined(item) {
+    const linkName = item.name;
     const correctPath = window.location.href.slice(window.location.href.lastIndexOf(window.location.host) + window.location.host.length);
-    if (linkName === "Home") {
-      return correctPath === "/";
+    if (item.className === "navMobileItem") {
+      return correctPath === item.link;
+    }
+    if (navbarSublists[linkName] === undefined) {
+      return false;
     }
     const linkNames = Object.values(navbarSublists[linkName]).map((e: NavSubLinkData) => e.link);
     return linkNames.includes(correctPath);
@@ -316,7 +321,7 @@ const NavBar = () => {
                             onKeyDown={onKeyPressHandler}
                             role="button"
                             tabIndex={0}
-                            className={`navText directLink ${shouldBeUnderlined(navMobileItem.name) ? "shouldBeUnderlined" : ""}`}
+                            className={`navText directLink ${shouldBeUnderlined(navMobileItem) ? "shouldBeUnderlined" : ""}`}
                             onClick={handleMenuClick}
                           >
                             {navMobileItem.name}
@@ -333,7 +338,7 @@ const NavBar = () => {
                           onKeyDown={onKeyPressHandler}
                           role="button"
                           tabIndex={0}
-                          className={`${clickedTitle === navMobileItem.name ? 'navText clicked' : 'navText'} ${shouldBeUnderlined(navMobileItem.name) ? "shouldBeUnderlined" : ""}`}
+                          className={`${clickedTitle === navMobileItem.name ? 'navText clicked' : 'navText'} ${shouldBeUnderlined(navMobileItem) ? "shouldBeUnderlined" : ""}`}
                           onClick={handleMenuClick}
                         >
                           {navMobileItem.name}

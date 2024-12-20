@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -315,7 +315,7 @@ const NavBar = () => {
                   ? (
                     <LiSection key={navkey}>
                       <div className="navTitle directLink">
-                        <NavLink to={navMobileItem.link}>
+                        <NavLink to={navMobileItem.link} target={navMobileItem.external ? "_blank" : null}>
                           <div
                             id={navMobileItem.id}
                             onKeyDown={onKeyPressHandler}
@@ -362,7 +362,14 @@ const NavBar = () => {
                 const dropkey = `drop_${idx}`;
                 return (
                   dropItem.link && (
-                    <Link id={dropItem.id} to={dropItem.link} className="dropdownItem" key={dropkey} onClick={() => setClickedTitle("")}>
+                    <Link
+                      id={dropItem.id}
+                      to={dropItem.link}
+                      target={dropItem.external ? "_blank" : null}
+                      className="dropdownItem"
+                      key={dropkey}
+                      onClick={() => setClickedTitle("")}
+                    >
                       {dropItem.name}
                       <div className="dropdownItemText">{dropItem.text}</div>
                     </Link>

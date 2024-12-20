@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from "./components/LogoMobile";
-import SearchBar from "./components/SearchBarMobile";
+// import SearchBar from "./components/SearchBarMobile";
 import menuClearIcon from '../../assets/header/Menu_Cancel_Icon.svg';
 import rightArrowIcon from '../../assets/header/Right_Arrow.svg';
 import leftArrowIcon from '../../assets/header/Left_Arrow.svg';
@@ -188,7 +188,7 @@ const Header = () => {
             >
               Menu
             </div>
-            {path !== "/sitesearch" && <div className="searchBarArea"><SearchBar /></div>}
+            {/* {path !== "/sitesearch" && <div className="searchBarArea"><SearchBar /></div>} */}
           </div>
         </HeaderContainer>
       </HeaderBanner>

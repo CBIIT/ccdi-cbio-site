@@ -5,6 +5,7 @@ import { Box, CircularProgress } from '@mui/material';
 function SuspenseLoader() {
   useEffect(() => {
     NProgress.start();
+
     return () => {
       NProgress.done();
     };

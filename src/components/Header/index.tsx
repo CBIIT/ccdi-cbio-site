@@ -56,6 +56,6 @@ const Header = () => (
       <HeaderMobile />
     </div>
   </HeaderContainer>
-  );
+);
 
 export default Header;

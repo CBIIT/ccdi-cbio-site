@@ -16,6 +16,7 @@ const Home = Loader(lazy(() => import('./pages/Home')));
 const Datasets = Loader(lazy(() => import('./pages/Datasets')));
 const Visualize = Loader(lazy(() => import('./pages/Visualize')));
 const About = Loader(lazy(() => import('./pages/About')));
+const Login = Loader(lazy(() => import('./pages/Login')));
 
 
 // status
@@ -43,6 +44,10 @@ const routes: RouteObject[] = [
       {
         path: '/about',
         element: <About />
+      },
+      {
+        path: '/login',
+        element: <Login />
       },
       {
         path: '*',

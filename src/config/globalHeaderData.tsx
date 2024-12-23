@@ -55,6 +55,13 @@ export const navMobileList = [
     id: 'navbar-link-about',
     className: 'navMobileItem',
   },
+  {
+    name: 'Login',
+    link: '/login',
+    id: 'navbar-link-login',
+    className: 'navMobileItem',
+    notExistInNav: true,
+  },
 ];
 
 export const navbarSublists = {

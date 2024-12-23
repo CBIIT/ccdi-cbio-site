@@ -263,7 +263,9 @@ const useOutsideAlerter = (ref) => {
 const NavBar = () => {
   const [clickedTitle, setClickedTitle] = useState("");
   const dropdownSelection = useRef(null);
-  const clickableObject = navMobileList.filter((item) => item.className === 'navMobileItem clickable');
+  // Exclude Login from Navbar
+  const filteredNavMobileList = navMobileList.filter((item) => !item.notExistInNav);
+  const clickableObject = filteredNavMobileList.filter((item) => item.className === 'navMobileItem clickable');
   const clickableTitle = clickableObject.map((item) => item.name);
   useOutsideAlerter(dropdownSelection);
 
@@ -308,7 +310,7 @@ const NavBar = () => {
       <NavContainer>
         <UlContainer>
           {
-            navMobileList.map((navMobileItem, idx) => {
+            filteredNavMobileList.map((navMobileItem, idx) => {
               const navkey = `nav_${idx}`;
               return (
                 navMobileItem.className === 'navMobileItem'

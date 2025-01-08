@@ -1,14 +1,15 @@
 import { FC, useEffect, useState } from 'react';
 
 const Home: FC = () => {
-  const iframeBaseUrl = 'http://localhost:3000/';
+  const isLocalDev = window.location.hostname === 'localhost';
+  const iframeBaseUrl = isLocalDev ? 'http://localhost:3000' : `${window.location.origin}/iframe`;
   const [urlFromHub, setUrlFromHub] = useState(iframeBaseUrl);
 
   useEffect(() => {
-    const urlParams = window.location.href.split('http://localhost:9000/')[1];
+    const urlParams = window.location.href.split(window.location.origin)[1];
     setUrlFromHub(`${iframeBaseUrl}${urlParams}`);
   }, []);
-  
+
   return (
     <iframe
       id="ccdi-cbioportal-home-page"

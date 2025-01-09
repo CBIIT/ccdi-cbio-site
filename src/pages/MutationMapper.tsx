@@ -1,8 +1,13 @@
 import { FC } from 'react';
+import IframePage from './iframe/IframePage';
 
 const MutationMapper: FC = () => {
   return (
-    <iframe src="http://localhost:3000/mutation_mapper" height="500vh" width="100%" style={{border: 'none'}}></iframe>
+    <IframePage
+      urlParams="/mutation_mapper"
+      id="ccdi-cbioportal-mutation_mapper-page"
+      title="CCDI-cBioPortal Mutation Mapper page"
+    />
   );
 };
 

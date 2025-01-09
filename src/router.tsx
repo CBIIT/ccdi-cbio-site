@@ -13,6 +13,10 @@ const Loader = (Component) => (props) =>
 
 // Pages
 const Home = Loader(lazy(() => import('./pages/Home')));
+const Study = Loader(lazy(() => import('./pages/Study')));
+const Results = Loader(lazy(() => import('./pages/Results')));
+const Patient = Loader(lazy(() => import('./pages/Patient')));
+const Comparison = Loader(lazy(() => import('./pages/Comparison')));
 const Datasets = Loader(lazy(() => import('./pages/Datasets')));
 const Visualize = Loader(lazy(() => import('./pages/Visualize')));
 const OncoPrinter = Loader(lazy(() => import('./pages/OncoPrinter')));
@@ -37,95 +41,95 @@ const routes: RouteObject[] = [
       },
       {
         path: '/study/summary',
-        element: <Home />
+        element: <Study />
       },
       {
         path: '/study/clinicalData',
-        element: <Home />
+        element: <Study />
       },
       {
         path: '/study/cnSegments',
-        element: <Home />
+        element: <Study />
       },
       {
         path: '/study/plots',
-        element: <Home />
+        element: <Study />
       },
       {
         path: '/results/oncoprint',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/cancerTypesSummary',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/mutualExclusivity',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/plots',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/mutations',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/structuralVariants',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/comparison',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/cnSegments',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/pathways',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/results/download',
-        element: <Home />
+        element: <Results />
       },
       {
         path: '/patient',
-        element: <Home />
+        element: <Patient />
       },
       {
         path: '/patient/summary',
-        element: <Home />
+        element: <Patient />
       },
       {
         path: '/patient/pathways',
-        element: <Home />
+        element: <Patient />
       },
       {
         path: '/patient/clinicalData',
-        element: <Home />
+        element: <Patient />
       },
       {
         path: '/comparison/overlap',
-        element: <Home />
+        element: <Comparison />
       },
       {
         path: '/comparison/survival',
-        element: <Home />
+        element: <Comparison />
       },
       {
         path: '/comparison/clinical',
-        element: <Home />
+        element: <Comparison />
       },
       {
         path: '/comparison/alterations',
-        element: <Home />
+        element: <Comparison />
       },
       {
         path: '/comparison/mutations',
-        element: <Home />
+        element: <Comparison />
       },
       {
         path: '/datasets',

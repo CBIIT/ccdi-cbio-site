@@ -1,8 +1,13 @@
 import { FC } from 'react';
+import IframePage from './iframe/IframePage';
 
 const OncoPrinter: FC = () => {
   return (
-    <iframe src="http://localhost:3000/oncoprinter" height="500vh" width="100%" style={{border: 'none'}}></iframe>
+    <IframePage
+      urlParams="/oncoprinter"
+      id="ccdi-cbioportal-oncoprinter-page"
+      title="CCDI-cBioPortal OncoPrinter page"
+    />
   );
 };
 

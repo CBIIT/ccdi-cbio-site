@@ -1,8 +1,13 @@
 import { FC } from 'react';
+import IframePage from './iframe/IframePage';
 
 const Visualize: FC = () => {
   return (
-    <iframe src="http://localhost:3000/visualize" height="500vh" width="100%" style={{border: 'none'}}></iframe>
+    <IframePage
+      urlParams="/visualize"
+      id="ccdi-cbioportal-visualize-page"
+      title="CCDI-cBioPortal Visualize page"
+    />
   );
 };
 

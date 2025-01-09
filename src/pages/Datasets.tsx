@@ -1,8 +1,13 @@
 import { FC } from 'react';
+import IframePage from './iframe/IframePage';
 
 const Datasets: FC = () => {
   return (
-    <iframe src="http://localhost:3000/datasets" height="500vh" width="100%" style={{border: 'none'}}></iframe>
+    <IframePage
+      urlParams="/datasets"
+      id="ccdi-cbioportal-datasets-page"
+      title="CCDI-cBioPortal Datasets page"
+    />
   );
 };
 

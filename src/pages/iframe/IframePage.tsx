@@ -1,9 +1,6 @@
 import { FC } from "react";
 
 const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlParams, id, title}) => {
-  const isLocalDev = window.location.hostname === 'localhost';
-  const iframeBaseUrl = isLocalDev ? 'http://localhost:3000' : `${window.location.origin}/iframe`;
-
   // // CCDI-TODO: Make the iframe height fit for the content
   // useEffect(() => {
   //   window.addEventListener('message', (e) => {
@@ -23,7 +20,7 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
 
   return (
     <iframe
-      src={`${iframeBaseUrl}${urlParams}`}
+      src={`${process.env.REACT_APP_CCDI_CBIO_IFRAME_URL}${urlParams}`}
       id={id}
       title={title}
       height="2400vh"

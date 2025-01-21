@@ -19,17 +19,17 @@ export const headerData = {
 export const navMobileList = [
   {
     name: 'Back to CCDI Hub',
-    link: 'https://ccdi.cancer.gov/explore',
+    link: 'https://ccdi.cancer.gov/home',
     external: true,
     id: 'navbar-link-back-to-ccdi-hub',
     className: 'navMobileItem',
   },
-  {
-    name: 'Home',
-    link: '',
-    id: 'navbar-link-home',
-    className: 'navMobileItem',
-  },
+  // {
+  //   name: 'Home',
+  //   link: '',
+  //   id: 'navbar-link-home',
+  //   className: 'navMobileItem',
+  // },
   {
     name: 'Data Sets',
     link: '/datasets',
@@ -49,19 +49,19 @@ export const navMobileList = [
     id: 'navbar-dropdown-cbio-documents',
     className: 'navMobileItem clickable',
   },
-  {
-    name: 'About',
-    link: '/about',
-    id: 'navbar-link-about',
-    className: 'navMobileItem',
-  },
-  {
-    name: 'Login',
-    link: '/login',
-    id: 'navbar-link-login',
-    className: 'navMobileItem',
-    notExistInNav: true,
-  },
+  // {
+  //   name: 'About',
+  //   link: '/about',
+  //   id: 'navbar-link-about',
+  //   className: 'navMobileItem',
+  // },
+  // {
+  //   name: 'Login',
+  //   link: '/login',
+  //   id: 'navbar-link-login',
+  //   className: 'navMobileItem',
+  //   notExistInNav: true,
+  // },
 ];
 
 export const navbarSublists = {
@@ -75,30 +75,30 @@ export const navbarSublists = {
   //   },
   // ],
   'cBio Documents': [
-    // {
-    //   name: 'Tutorials/Webinars',
-    //   link: 'https://docs.cbioportal.org/user-guide/overview/',
-    //   external: true,
-    //   // text: 'testText for subitem #1',
-    //   id: 'navbar-dropdown-item-navbar-subitem-1',
-    //   className: 'navMobileSubItem',
-    // },
-    // {
-    //   name: 'FAQ',
-    //   link: 'https://docs.cbioportal.org/user-guide/faq/',
-    //   external: true,
-    //   // text: 'testText for subitem #2',
-    //   id: 'navbar-dropdown-item-navbar-subitem-2',
-    //   className: 'navMobileSubItem',
-    // },
-    // {
-    //   name: 'News',
-    //   link: 'https://docs.cbioportal.org/news/',
-    //   external: true,
-    //   // text: 'testText for subitem #3',
-    //   id: 'navbar-dropdown-item-navbar-subitem-3',
-    //   className: 'navMobileSubItem',
-    // },
+    {
+      name: 'Tutorials/Webinars',
+      link: 'https://docs.cbioportal.org/user-guide/overview/',
+      external: true,
+      // text: 'testText for subitem #1',
+      id: 'navbar-dropdown-item-navbar-subitem-1',
+      className: 'navMobileSubItem',
+    },
+    {
+      name: 'FAQ',
+      link: 'https://docs.cbioportal.org/user-guide/faq/',
+      external: true,
+      // text: 'testText for subitem #2',
+      id: 'navbar-dropdown-item-navbar-subitem-2',
+      className: 'navMobileSubItem',
+    },
+    {
+      name: 'News',
+      link: 'https://docs.cbioportal.org/news/',
+      external: true,
+      // text: 'testText for subitem #3',
+      id: 'navbar-dropdown-item-navbar-subitem-3',
+      className: 'navMobileSubItem',
+    },
     {
       name: 'Visualize Your Data',
       link: '/visualize',

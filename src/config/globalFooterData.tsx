@@ -20,11 +20,15 @@ export default {
       items: [
         {
           text: 'About CCDI Hub',
-          link: '/about',
+          link: 'https://ccdi.cancer.gov/about',
         },
         {
           text: 'About CCDI',
           link: 'https://www.cancer.gov/research/areas/childhood/childhood-cancer-data-initiative',
+        },
+        {
+          text: 'About cBioPortal',
+          link: 'https://docs.cbioportal.org/about-us/',
         },
         {
           text: 'Contact CCDI Hub',
@@ -80,9 +84,9 @@ export default {
   ],
   followUs_links: [
     {
-      img: instagramIcon,
-      link: 'https://www.instagram.com/nationalcancerinstitute/',
-      description: 'instagramIcon',
+      img: facebookIcon,
+      link: 'https://www.facebook.com/cancer.gov',
+      description: 'facebookIcon',
     },
     {
       img: twitterIcon,
@@ -90,22 +94,19 @@ export default {
       description: 'twitterIcon',
     },
     {
-      img: facebookIcon,
-      link: 'https://www.facebook.com/cancer.gov',
-      description: 'facebookIcon',
-
+      img: instagramIcon,
+      link: 'https://www.instagram.com/nationalcancerinstitute/',
+      description: 'instagramIcon',
     },
     {
       img: youtubeIcon,
       link: 'https://www.youtube.com/NCIgov',
       description: 'youtubeIcon',
-
     },
     {
       img: linkedInIcon,
       link: 'https://www.linkedin.com/company/nationalcancerinstitute/',
       description: 'linkedInIcon',
-
     }
   ],
   contact_links: [

@@ -264,8 +264,8 @@ const NavBar = () => {
   const [clickedTitle, setClickedTitle] = useState("");
   const dropdownSelection = useRef(null);
   // Exclude Login from Navbar
-  const filteredNavMobileList = navMobileList.filter((item) => !item.notExistInNav);
-  const clickableObject = filteredNavMobileList.filter((item) => item.className === 'navMobileItem clickable');
+  // const filteredNavMobileList = navMobileList.filter((item) => !item.notExistInNav);
+  const clickableObject = navMobileList.filter((item) => item.className === 'navMobileItem clickable');
   const clickableTitle = clickableObject.map((item) => item.name);
   useOutsideAlerter(dropdownSelection);
 
@@ -310,7 +310,7 @@ const NavBar = () => {
       <NavContainer>
         <UlContainer>
           {
-            filteredNavMobileList.map((navMobileItem, idx) => {
+            navMobileList.map((navMobileItem, idx) => {
               const navkey = `nav_${idx}`;
               return (
                 navMobileItem.className === 'navMobileItem'
@@ -352,9 +352,9 @@ const NavBar = () => {
             })
           }
         </UlContainer>
-        <StyledLoginLink id="header-navbar-login-button" to="/login">
+        {/* <StyledLoginLink id="header-navbar-login-button" to="/login">
           Login
-        </StyledLoginLink>
+        </StyledLoginLink> */}
       </NavContainer>
       <Dropdown ref={dropdownSelection} className={clickedTitle === ''  ? "invisible" : ""}>
         <DropdownContainer>

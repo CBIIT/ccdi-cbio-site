@@ -119,8 +119,8 @@ export default {
       link: 'tel:+18004226237',
     },
     {
-      text: 'cdshelpdesk@mail.nih.gov',
-      link: 'mailto:+cdshelpdesk@mail.nih.gov',
+      text: 'NCIChildhoodCancerDataInitiative@mail.nih.gov',
+      link: 'mailto:NCIChildhoodCancerDataInitiative@mail.nih.gov',
     },
     {
       text: 'Site Feedback',

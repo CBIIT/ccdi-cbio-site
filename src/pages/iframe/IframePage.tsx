@@ -1,6 +1,8 @@
 import { FC } from "react";
+// import { useNavigate } from "react-router-dom";
 
 const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlParams, id, title}) => {
+  // const navigate = useNavigate();
   // // CCDI-TODO: Make the iframe height fit for the content
   // useEffect(() => {
   //   window.addEventListener('message', (e) => {
@@ -16,6 +18,13 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
   //         break;
   //     }
   //   }, false);
+  // }, []);
+  // useEffect(() => {
+  //   window.addEventListener('message', (e) => {
+  //     if (e.origin === process.env.REACT_APP_CCDI_CBIO_IFRAME_URL) {
+  //       navigate('/');
+  //     }
+  //   });
   // }, []);
 
   return (

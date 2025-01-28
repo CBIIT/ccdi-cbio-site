@@ -7,8 +7,12 @@ const LogoArea = styled.div`
 
     .logoContainer {
       margin-top: 32px;
-    }
 
+      img {
+        height: 50px;
+        max-width: 350px;
+      }
+    }
 `;
 
 const Logo = () => (

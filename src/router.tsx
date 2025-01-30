@@ -16,6 +16,7 @@ const Home = Loader(lazy(() => import('./pages/Home')));
 const Study = Loader(lazy(() => import('./pages/Study')));
 const Results = Loader(lazy(() => import('./pages/Results')));
 const Patient = Loader(lazy(() => import('./pages/Patient')));
+const LoadingComparison = Loader(lazy(() => import('./pages/LoadingComparison')));
 const Comparison = Loader(lazy(() => import('./pages/Comparison')));
 const Datasets = Loader(lazy(() => import('./pages/Datasets')));
 const Visualize = Loader(lazy(() => import('./pages/Visualize')));
@@ -110,6 +111,10 @@ const routes: RouteObject[] = [
       {
         path: '/patient/clinicalData',
         element: <Patient />
+      },
+      {
+        path: '/loading/comparison',
+        element: <LoadingComparison />
       },
       {
         path: '/comparison/overlap',

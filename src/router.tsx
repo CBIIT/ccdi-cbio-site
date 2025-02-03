@@ -117,6 +117,10 @@ const routes: RouteObject[] = [
         element: <LoadingComparison />
       },
       {
+        path: '/comparison',
+        element: <Comparison />
+      },
+      {
         path: '/comparison/overlap',
         element: <Comparison />
       },

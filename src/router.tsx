@@ -41,6 +41,10 @@ const routes: RouteObject[] = [
         element: <Home />
       },
       {
+        path: '/study',
+        element: <Study />
+      },
+      {
         path: '/study/summary',
         element: <Study />
       },
@@ -55,6 +59,10 @@ const routes: RouteObject[] = [
       {
         path: '/study/plots',
         element: <Study />
+      },
+      {
+        path: '/results',
+        element: <Results />
       },
       {
         path: '/results/oncoprint',

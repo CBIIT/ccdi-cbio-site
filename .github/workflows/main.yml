@@ -13,19 +13,14 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_CCDI_CBIO_SITE_URL: ${{ secrets.SITE_URL }}
+      REACT_APP_CCDI_CBIO_IFRAME_URL: ${{ secrets.IFRAME_URL }}
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # checkout
       - name: Checkout
         uses: actions/checkout@v4
-
-      # Set Env
-      - name: Set env
-        run: echo "REACT_APP_CCDI_CBIO_SITE_URL=https://cbiit.github.io/ccdi-cbio-site" | "REACT_APP_CCDI_CBIO_IFRAME_URL=https://cbiit.github.io/ccdi-cbio-frontend" >> $GITHUB_ENV
-
-      # # Run Env
-      # - name: Run env
-      #   run: echo $BRANCH_ENV
 
       # node
       - name: Use Node.js

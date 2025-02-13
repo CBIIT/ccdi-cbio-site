@@ -8,7 +8,7 @@ import usaFlagSmall from '../assets/header/us_flag_small.svg';
 export const headerData = {
   globalHeaderLogo: Logo,
   globalHeaderLogoSmall: LogoSmall,
-  globalHeaderLogoLink: '/',
+  globalHeaderLogoLink: '/ccdi-cbio-site',
   globalHeaderLogoAltText: 'Portal Logo',
   globalHeaderSearchIcon: searchbarIcon,
   globalHeaderSearchIconAltText: 'search Icon',
@@ -32,7 +32,7 @@ export const navMobileList = [
   // },
   {
     name: 'Data Sets',
-    link: '/datasets',
+    link: '/ccdi-cbio-site/datasets',
     id: 'navbar-link-datasets',
     className: 'navMobileItem',
   },
@@ -101,7 +101,7 @@ export const navbarSublists = {
     },
     {
       name: 'Visualize Your Data',
-      link: '/visualize',
+      link: '/ccdi-cbio-site/visualize',
       // text: 'testText for subitem #4',
       id: 'navbar-dropdown-item-navbar-subitem-4',
       className: 'navMobileSubItem',

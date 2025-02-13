@@ -37,131 +37,131 @@ const routes: RouteObject[] = [
     element: <Layout />,
     children: [
       {
-        path: '/',
+        path: '/ccdi-cbio-site',
         element: <Home />
       },
       {
-        path: '/study',
+        path: '/ccdi-cbio-site/study',
         element: <Study />
       },
       {
-        path: '/study/summary',
+        path: '/ccdi-cbio-site/study/summary',
         element: <Study />
       },
       {
-        path: '/study/clinicalData',
+        path: '/ccdi-cbio-site/study/clinicalData',
         element: <Study />
       },
       {
-        path: '/study/cnSegments',
+        path: '/ccdi-cbio-site/study/cnSegments',
         element: <Study />
       },
       {
-        path: '/study/plots',
+        path: '/ccdi-cbio-site/study/plots',
         element: <Study />
       },
       {
-        path: '/results',
+        path: '/ccdi-cbio-site/results',
         element: <Results />
       },
       {
-        path: '/results/oncoprint',
+        path: '/ccdi-cbio-site/results/oncoprint',
         element: <Results />
       },
       {
-        path: '/results/cancerTypesSummary',
+        path: '/ccdi-cbio-site/results/cancerTypesSummary',
         element: <Results />
       },
       {
-        path: '/results/mutualExclusivity',
+        path: '/ccdi-cbio-site/results/mutualExclusivity',
         element: <Results />
       },
       {
-        path: '/results/plots',
+        path: '/ccdi-cbio-site/results/plots',
         element: <Results />
       },
       {
-        path: '/results/mutations',
+        path: '/ccdi-cbio-site/results/mutations',
         element: <Results />
       },
       {
-        path: '/results/structuralVariants',
+        path: '/ccdi-cbio-site/results/structuralVariants',
         element: <Results />
       },
       {
-        path: '/results/comparison',
+        path: '/ccdi-cbio-site/results/comparison',
         element: <Results />
       },
       {
-        path: '/results/cnSegments',
+        path: '/ccdi-cbio-site/results/cnSegments',
         element: <Results />
       },
       {
-        path: '/results/pathways',
+        path: '/ccdi-cbio-site/results/pathways',
         element: <Results />
       },
       {
-        path: '/results/download',
+        path: '/ccdi-cbio-site/results/download',
         element: <Results />
       },
       {
-        path: '/patient',
+        path: '/ccdi-cbio-site/patient',
         element: <Patient />
       },
       {
-        path: '/patient/summary',
+        path: '/ccdi-cbio-site/patient/summary',
         element: <Patient />
       },
       {
-        path: '/patient/pathways',
+        path: '/ccdi-cbio-site/patient/pathways',
         element: <Patient />
       },
       {
-        path: '/patient/clinicalData',
+        path: '/ccdi-cbio-site/patient/clinicalData',
         element: <Patient />
       },
       {
-        path: '/loading/comparison',
+        path: '/ccdi-cbio-site/loading/comparison',
         element: <LoadingComparison />
       },
       {
-        path: '/comparison',
+        path: '/ccdi-cbio-site/comparison',
         element: <Comparison />
       },
       {
-        path: '/comparison/overlap',
+        path: '/ccdi-cbio-site/comparison/overlap',
         element: <Comparison />
       },
       {
-        path: '/comparison/survival',
+        path: '/ccdi-cbio-site/comparison/survival',
         element: <Comparison />
       },
       {
-        path: '/comparison/clinical',
+        path: '/ccdi-cbio-site/comparison/clinical',
         element: <Comparison />
       },
       {
-        path: '/comparison/alterations',
+        path: '/ccdi-cbio-site/comparison/alterations',
         element: <Comparison />
       },
       {
-        path: '/comparison/mutations',
+        path: '/ccdi-cbio-site/comparison/mutations',
         element: <Comparison />
       },
       {
-        path: '/datasets',
+        path: '/ccdi-cbio-site/datasets',
         element: <Datasets />
       },
       {
-        path: '/visualize',
+        path: '/ccdi-cbio-site/visualize',
         element: <Visualize />
       },
       {
-        path: '/oncoprinter',
+        path: '/ccdi-cbio-site/oncoprinter',
         element: <OncoPrinter />
       },
       {
-        path: '/mutation_mapper',
+        path: '/ccdi-cbio-site/mutation_mapper',
         element: <MutationMapper />
       },
       // {
@@ -173,7 +173,7 @@ const routes: RouteObject[] = [
       //   element: <Login />
       // },
       {
-        path: '*',
+        path: 'ccdi-cbio-site/*',
         element: <Status404 />
       }
     ]

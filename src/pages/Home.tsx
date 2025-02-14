@@ -4,7 +4,7 @@ import IframePage from './iframe/IframePage';
 const Home: FC = () => {
   return (
     <IframePage
-      urlParams="/ccdi-cbio-site/"
+      urlParams="/"
       id="ccdi-cbioportal-home-page"
       title="CCDI-cBioPortal Home page"
     />

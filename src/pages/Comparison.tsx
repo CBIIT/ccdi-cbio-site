@@ -3,10 +3,17 @@ import AdvancedIframePage from './iframe/AdvancedIframePage';
 
 const Comparison: FC = () => {
   return (
-    <AdvancedIframePage
-      id="ccdi-cbioportal-comparison-page"
-      title="CCDI-cBioPortal Comparison page"
-    />
+    <>
+      <h1
+        aria-label="CCDI cBioPortal Comparison page"
+        style={{margin: 0, padding: 0}}
+      ></h1>
+
+      <AdvancedIframePage
+        id="ccdi-cbioportal-comparison-page"
+        title="CCDI-cBioPortal Comparison page"
+      />
+    </>
   );
 };
 

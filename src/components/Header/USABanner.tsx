@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { headerData } from '../../config/globalHeaderData';
 
-const BannerArea = styled.div`
+const BannerArea = styled.aside`
   flex-direction: row;
   width: 100%;
   height: 46px;
@@ -36,7 +36,7 @@ const BannerContainer = styled.div`
 `;
 
 const USABanner = () => (
-  <BannerArea>
+  <BannerArea aria-label="USA Banner">
     <BannerContainer>
       <img src={headerData.usaFlagSmall} alt={headerData.usaFlagSmallAltText} />
       <div className="text">

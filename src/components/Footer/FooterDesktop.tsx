@@ -313,56 +313,57 @@ const FooterDesktop = () => {
             </button>
           </FooterEmailSignupContainer>
         </FooterContainer>
+
+        <BottomFooter>
+          <div className="bottom-footer-container">
+            <div id="bottom-footer-header">
+              <a className="logoText" href="https://www.cancer.gov" target="_blank" rel="noopener noreferrer">
+                <div className="logoUpperText">National Cancer Institute</div>
+                <div className="logoLowerText">at the National Institutes of Health</div>
+              </a>
+            </div>
+            <div id="bottom-footer-contact-us">
+              Contact Us
+              <div id="bottom-footer-contact-links">
+                {
+                  FooterData.contact_links.map((contactItem, contactidx) => {
+                    const contactkey = `contact_${contactidx}`;
+                    return (
+                      contactItem.link.includes('http')
+                        ? <a key={contactkey} href={contactItem.link} target="_blank" rel="noopener noreferrer">{contactItem.text}</a>
+                        : <a key={contactkey} href={contactItem.link}>{contactItem.text}</a>
+                    );
+                  })
+                }
+              </div>
+            </div>
+            <div className="break" />
+            <div id="bottom-footer-follow-us">
+              Follow Us
+              <div id="bottom-footer-follow-us-links">
+                {
+                  FooterData.followUs_links.map((followItem, followidx) => {
+                    const followkey = `follow_${followidx}`;
+                    return (
+                      <a key={followkey} className={followidx !== 0 ? "bottom-footer-social-media-imgs" : ""} href={followItem.link} target="_blank" rel="noopener noreferrer"><img src={followItem.img} alt={followItem.description} /></a>
+                    );
+                  })
+                }
+              </div>
+            </div>
+            <div id="bottom-footer-gov-links">
+              {
+                FooterData.global_footer_links.map((linkItem, idx) => {
+                  const linkitemkey = `linkitem_${idx}`;
+                  return (
+                    <a key={linkitemkey} href={linkItem.link} target="_blank" rel="noopener noreferrer">{linkItem.text}</a>
+                  );
+                })
+              }
+            </div>
+          </div>
+        </BottomFooter>
       </FooterStyled>
-      <BottomFooter>
-        <div className="bottom-footer-container">
-          <div id="bottom-footer-header">
-            <a className="logoText" href="https://www.cancer.gov" target="_blank" rel="noopener noreferrer">
-              <div className="logoUpperText">National Cancer Institute</div>
-              <div className="logoLowerText">at the National Institutes of Health</div>
-            </a>
-          </div>
-          <div id="bottom-footer-contact-us">
-            Contact Us
-            <div id="bottom-footer-contact-links">
-              {
-                FooterData.contact_links.map((contactItem, contactidx) => {
-                  const contactkey = `contact_${contactidx}`;
-                  return (
-                    contactItem.link.includes('http')
-                      ? <a key={contactkey} href={contactItem.link} target="_blank" rel="noopener noreferrer">{contactItem.text}</a>
-                      : <a key={contactkey} href={contactItem.link}>{contactItem.text}</a>
-                  );
-                })
-              }
-            </div>
-          </div>
-          <div className="break" />
-          <div id="bottom-footer-follow-us">
-            Follow Us
-            <div id="bottom-footer-follow-us-links">
-              {
-                FooterData.followUs_links.map((followItem, followidx) => {
-                  const followkey = `follow_${followidx}`;
-                  return (
-                    <a key={followkey} className={followidx !== 0 ? "bottom-footer-social-media-imgs" : ""} href={followItem.link} target="_blank" rel="noopener noreferrer"><img src={followItem.img} alt={followItem.description} /></a>
-                  );
-                })
-              }
-            </div>
-          </div>
-          <div id="bottom-footer-gov-links">
-            {
-              FooterData.global_footer_links.map((linkItem, idx) => {
-                const linkitemkey = `linkitem_${idx}`;
-                return (
-                  <a key={linkitemkey} href={linkItem.link} target="_blank" rel="noopener noreferrer">{linkItem.text}</a>
-                );
-              })
-            }
-          </div>
-        </div>
-      </BottomFooter>
     </>
   );
 };

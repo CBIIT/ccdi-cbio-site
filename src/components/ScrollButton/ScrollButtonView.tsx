@@ -25,13 +25,15 @@ const ScrollButton = () => {
   }, []);
 
   return (
-    <a
-      ref={clickToTopRef}
-      id="stt"
-      className={scroll < 200 ? "hidden" : "visisble"}
-    >
-      <span id="stt-span">BACK TO TOP</span>
-    </a>
+    <aside aria-label="Back to Top">
+      <a
+        ref={clickToTopRef}
+        id="stt"
+        className={scroll < 200 ? "hidden" : "visisble"}
+      >
+        <span id="stt-span">BACK TO TOP</span>
+      </a>
+    </aside>
   );
 };
 

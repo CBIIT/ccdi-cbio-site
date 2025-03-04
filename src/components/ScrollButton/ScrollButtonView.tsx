@@ -30,6 +30,7 @@ const ScrollButton = () => {
         ref={clickToTopRef}
         id="stt"
         className={scroll < 200 ? "hidden" : "visisble"}
+        style={{cursor: 'pointer'}}
       >
         <span id="stt-span">BACK TO TOP</span>
       </a>

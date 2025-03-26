@@ -26,9 +26,13 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
   //   });
   // }, []);
 
+  const iFrameBaseUrl = process.env.NODE_ENV === 'development'
+    ? process.env.REACT_APP_CCDI_CBIO_IFRAME_URL
+    : 'https://cbioportal-dev-content.ccdi.cancer.gov';
+
   return (
     <iframe
-      src={`${process.env.REACT_APP_CCDI_CBIO_IFRAME_URL}${urlParams}`}
+      src={`${iFrameBaseUrl}${urlParams}`}
       id={id}
       title={title}
       height="600vh"

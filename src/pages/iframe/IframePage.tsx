@@ -15,6 +15,9 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
             iframeTag.style.height = `${data}px`;
           }
           break;
+        case 'setUrl':
+          window.history.replaceState({}, '', window.location.protocol + "//" + window.location.host + data);
+          break;
       }
     }, false);
   }, []);

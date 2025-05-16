@@ -18,20 +18,13 @@ export const headerData = {
 
 export const navMobileList = [
   {
-    name: 'Back to CCDI Hub',
-    link: 'https://ccdi.cancer.gov/home',
-    external: true,
-    id: 'navbar-link-back-to-ccdi-hub',
+    name: 'Home',
+    link: '/',
+    id: 'navbar-link-home',
     className: 'navMobileItem',
   },
-  // {
-  //   name: 'Home',
-  //   link: '',
-  //   id: 'navbar-link-home',
-  //   className: 'navMobileItem',
-  // },
   {
-    name: 'Data Sets',
+    name: 'Datasets',
     link: '/datasets',
     id: 'navbar-link-datasets',
     className: 'navMobileItem',
@@ -44,10 +37,17 @@ export const navMobileList = [
   //   className: 'navMobileItem',
   // },
   {
-    name: 'cBio Documents',
+    name: 'About',
     link: '',
-    id: 'navbar-dropdown-cbio-documents',
+    id: 'navbar-dropdown-about',
     className: 'navMobileItem clickable',
+  },
+  {
+    name: 'CCDI Hub',
+    link: 'https://ccdi.cancer.gov/',
+    external: true,
+    id: 'navbar-link-ccdi-hub',
+    className: 'navMobileItem',
   },
   // {
   //   name: 'About',
@@ -74,38 +74,45 @@ export const navbarSublists = {
   //     className: 'navMobileSubTitle',
   //   },
   // ],
-  'cBio Documents': [
+  'About': [
     {
-      name: 'Tutorials/Webinars',
-      link: 'https://docs.cbioportal.org/user-guide/overview/',
-      external: true,
+      name: 'About CCDI cBioPortal',
+      // link: '',
+      // external: true,
       // text: 'testText for subitem #1',
       id: 'navbar-dropdown-item-navbar-subitem-1',
       className: 'navMobileSubItem',
     },
     {
-      name: 'FAQ',
-      link: 'https://docs.cbioportal.org/user-guide/faq/',
-      external: true,
+      name: 'Dataset and Release Notes',
+      // link: '',
       // text: 'testText for subitem #2',
       id: 'navbar-dropdown-item-navbar-subitem-2',
       className: 'navMobileSubItem',
     },
     {
-      name: 'News',
-      link: 'https://docs.cbioportal.org/news/',
+      name: 'cBio Tutorials',
+      link: 'https://docs.cbioportal.org/user-guide/overview/',
       external: true,
       // text: 'testText for subitem #3',
       id: 'navbar-dropdown-item-navbar-subitem-3',
       className: 'navMobileSubItem',
     },
     {
-      name: 'Visualize Your Data',
-      link: '/visualize',
+      name: 'cBio FAQ',
+      link: 'https://docs.cbioportal.org/user-guide/faq/',
+      external: true,
       // text: 'testText for subitem #4',
       id: 'navbar-dropdown-item-navbar-subitem-4',
       className: 'navMobileSubItem',
     },
+    // {
+    //   name: 'Visualize Your Data',
+    //   link: '/visualize',
+    //   // text: 'testText for subitem #4',
+    //   id: 'navbar-dropdown-item-navbar-subitem-4',
+    //   className: 'navMobileSubItem',
+    // },
   ],
   // About: [
   //   {

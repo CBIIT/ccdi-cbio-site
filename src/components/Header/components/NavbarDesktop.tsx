@@ -363,7 +363,8 @@ const NavBar = () => {
               clickedTitle !== "" ? navbarSublists[clickedTitle].map((dropItem, idx) => {
                 const dropkey = `drop_${idx}`;
                 return (
-                  dropItem.link && (
+                  // dropItem.link && 
+                  (
                     <Link
                       id={dropItem.id}
                       to={dropItem.link}

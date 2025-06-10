@@ -22,6 +22,7 @@ const Datasets = Loader(lazy(() => import('./pages/Datasets')));
 const Visualize = Loader(lazy(() => import('./pages/Visualize')));
 const OncoPrinter = Loader(lazy(() => import('./pages/OncoPrinter')));
 const MutationMapper = Loader(lazy(() => import('./pages/MutationMapper')));
+const ReleaseNotes = Loader(lazy(() => import('./pages/ReleaseNotes')));
 // const About = Loader(lazy(() => import('./pages/About')));
 // const Login = Loader(lazy(() => import('./pages/Login')));
 
@@ -163,6 +164,10 @@ const routes: RouteObject[] = [
       {
         path: '/mutation_mapper',
         element: <MutationMapper />
+      },
+      {
+        path: '/datasets-and-release-notes',
+        element: <ReleaseNotes />
       },
       // {
       //   path: '/about',

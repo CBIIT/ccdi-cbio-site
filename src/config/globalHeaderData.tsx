@@ -85,7 +85,7 @@ export const navbarSublists = {
     },
     {
       name: 'Dataset and Release Notes',
-      // link: '',
+      link: '/datasets-and-release-notes',
       // text: 'testText for subitem #2',
       id: 'navbar-dropdown-item-navbar-subitem-2',
       className: 'navMobileSubItem',

@@ -166,7 +166,7 @@ const routes: RouteObject[] = [
         element: <MutationMapper />
       },
       {
-        path: '/datasets-and-release-notes',
+        path: '/dataset-and-release-notes',
         element: <ReleaseNotes />
       },
       // {

@@ -266,29 +266,29 @@ const FooterDesktop = () => {
         <FooterContainer>
           <FooterLinksContainer>
             {
-                    FooterData.link_sections.map((linkItem, linkidx) => {
-                        const linkkey = `link_${linkidx}`;
-                        return (
-                          <div className="footItem" key={linkkey}>
-                            <div className="footItemTitle">{linkItem.title}</div>
-                            {
-                                    linkItem.items.map((item, itemidx) => {
-                                        const itemkey = `item_${itemidx}`;
-                                        return (
-                                          <div className="footItemSubtitle" key={itemkey}>
-                                            {
-                                                    item.link.includes('http')
-                                                    ? <a className="footItemLink" href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>
-                                                    : <a className="footItemLink" href={item.link}>{item.text}</a>
-                                                }
-                                          </div>
-                                        );
-                                    })
-                                }
-                          </div>
-                        );
-                    })
-                }
+              FooterData.link_sections.map((linkItem, linkidx) => {
+                const linkkey = `link_${linkidx}`;
+                return (
+                  <div className="footItem" key={linkkey}>
+                    <div className="footItemTitle">{linkItem.title}</div>
+                      {
+                        linkItem.items.map((item, itemidx) => {
+                          const itemkey = `item_${itemidx}`;
+                          return (
+                            <div className="footItemSubtitle" key={itemkey}>
+                              {
+                                item.link.includes('http')
+                                  ? <a className="footItemLink" href={item.link} target="_blank" rel="noopener noreferrer">{item.text}</a>
+                                  : <a className="footItemLink" href={item.link}>{item.text}</a>
+                              }
+                            </div>
+                          );
+                        })
+                      }
+                  </div>
+                );
+              })
+            }
           </FooterLinksContainer>
           <FooterEmailSignupContainer onSubmit={handleSubmit} ref={emailForm} action="https://public.govdelivery.com/accounts/USNIHNCI/subscribers/qualify" method="post" target="_blank" id="signup" noValidate>
             <input type="hidden" name="topic_id" id="topic_id" value="USNIHNCI_223" />

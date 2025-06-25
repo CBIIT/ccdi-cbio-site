@@ -77,8 +77,8 @@ export const navbarSublists = {
   'About': [
     {
       name: 'About CCDI cBioPortal',
-      // link: '',
-      // external: true,
+      link: 'https://ccdi.cancer.gov/cbioportal',
+      external: true,
       // text: 'testText for subitem #1',
       id: 'navbar-dropdown-item-navbar-subitem-1',
       className: 'navMobileSubItem',

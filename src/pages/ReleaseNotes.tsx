@@ -1,9 +1,12 @@
 import { FC, useEffect } from 'react';
 
 const ReleaseNotes: FC = () => {
-  const srcUrl = process.env.NODE_ENV === 'development'
+  const tierName = window.location.hostname.split('.')[0].split('-')[1];
+  const isLocalEnv = process.env.NODE_ENV === 'development';
+  const isDevEnv = (tierName === 'dev') || (tierName === 'qa');
+  const srcUrl = isLocalEnv
     ? process.env.REACT_APP_CCDI_CBIO_CONTENT_UI_URL
-    : 'https://cbiit.github.io/ccdi-cbio-content-ui'
+    : (isDevEnv ? 'https://cbiit.github.io/ccdi-cbio-content-ui?dev' : 'https://cbiit.github.io/ccdi-cbio-content-ui');
 
   useEffect(() => {
     window.addEventListener('message', (e) => {

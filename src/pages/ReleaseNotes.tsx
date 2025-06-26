@@ -25,7 +25,7 @@ const ReleaseNotes: FC = () => {
       src={srcUrl}
       id="dataset-and-release-notes"
       title="Dataset and Release Notes"
-      height="600vh"
+      height="300vh"
       width="100%"
       style={{border: 'none'}}
     />

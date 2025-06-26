@@ -320,7 +320,7 @@ const NavBar = () => {
                         {
                           navMobileItem.id === 'navbar-link-home'
                             ? (
-                                <a href={navMobileItem.link} target={navMobileItem.external ? "_blank" : null}>
+                                <a href={navMobileItem.link} target={navMobileItem.external ? "_blank" : null} rel={navMobileItem.external ? "noopener noreferrer" : null}>
                                   <div
                                     id={navMobileItem.id}
                                     onKeyDown={onKeyPressHandler}

@@ -244,9 +244,12 @@ const StyledLoginLink = styled(Link)`
 const useOutsideAlerter = (ref) => {
   useEffect(() => {
     function handleClickOutside(event) {
-      if (!event.target || (event.target.getAttribute("class") !== "dropdownList" && ref.current && !ref.current.contains(event.target))) {
+      if (
+        !event.target ||
+        (event.target.getAttribute("class") !== "dropdownList" && ref.current && !ref.current.contains(event.target))
+      ) {
         const toggle = document.getElementsByClassName("navText clicked");
-        if (toggle[0] && event.target.getAttribute("class") !== "navText clicked" && event.target.getAttribute("class") !== "navText clicked") {
+        if (toggle[0] && !event.target.getAttribute("class").includes("navText clicked")) {
           const temp: HTMLElement = toggle[0] as HTMLElement;
           temp.click();
         }
@@ -375,7 +378,7 @@ const NavBar = () => {
           Login
         </StyledLoginLink> */}
       </NavContainer>
-      <Dropdown ref={dropdownSelection} className={clickedTitle === ''  ? "invisible" : ""}>
+      <Dropdown ref={dropdownSelection} className={clickedTitle === '' ? "invisible" : ""}>
         <DropdownContainer>
           <div className="dropdownList">
             {

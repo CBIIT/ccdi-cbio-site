@@ -23,7 +23,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <Container
           maxWidth={false}
           sx={{ minHeight: '600px'}}
-          style={{paddingLeft: 0, paddingRight: 0, maxWidth: 1600}}
+          style={{paddingLeft: 0, paddingRight: 0, maxWidth: 1600, minHeight: '300px'}}
         >
           <Box display="flex">
             {children || <Outlet />}

@@ -241,24 +241,27 @@ const StyledLoginLink = styled(Link)`
   margin-right: 32px;
 `;
 
-// const useOutsideAlerter = (ref) => {
-//   useEffect(() => {
-//     function handleClickOutside(event) {
-//       if (!event.target || (event.target.getAttribute("class") !== "dropdownList" && ref.current && !ref.current.contains(event.target))) {
-//         const toggle = document.getElementsByClassName("navText clicked");
-//         if (toggle[0] && event.target.getAttribute("class") !== "navText clicked" && event.target.getAttribute("class") !== "navText clicked") {
-//           const temp: HTMLElement = toggle[0] as HTMLElement;
-//           temp.click();
-//         }
-//       }
-//     }
+const useOutsideAlerter = (ref) => {
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        !event.target ||
+        (event.target.getAttribute("class") !== "dropdownList" && ref.current && !ref.current.contains(event.target))
+      ) {
+        const toggle = document.getElementsByClassName("navText clicked");
+        if (toggle[0] && !event.target.getAttribute("class").includes("navText clicked")) {
+          const temp: HTMLElement = toggle[0] as HTMLElement;
+          temp.click();
+        }
+      }
+    }
 
-//     document.addEventListener("mousedown", handleClickOutside);
-//     return () => {
-//       document.removeEventListener("mousedown", handleClickOutside);
-//     };
-//   }, [ref]);
-// };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+};
 
 const NavBar = () => {
   const [clickedTitle, setClickedTitle] = useState("");
@@ -267,7 +270,7 @@ const NavBar = () => {
   // const filteredNavMobileList = navMobileList.filter((item) => !item.notExistInNav);
   const clickableObject = navMobileList.filter((item) => item.className === 'navMobileItem clickable');
   const clickableTitle = clickableObject.map((item) => item.name);
-  // useOutsideAlerter(dropdownSelection);
+  useOutsideAlerter(dropdownSelection);
 
   const handleMenuClick = (e) => {
     if (e.target.innerText === clickedTitle || !clickableTitle.includes(e.target.innerText)) {

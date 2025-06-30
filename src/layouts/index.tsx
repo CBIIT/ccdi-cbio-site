@@ -22,8 +22,8 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <main aria-label="CCDI CBIO Main Section">
         <Container
           maxWidth={false}
-          sx={{ minHeight: '600px'}}
-          style={{paddingLeft: 0, paddingRight: 0, maxWidth: 1600, minHeight: '300px'}}
+          sx={{minHeight: 600}}
+          style={{paddingLeft: 0, paddingRight: 0, paddingBottom: 70, minHeight: 300}}
         >
           <Box display="flex">
             {children || <Outlet />}

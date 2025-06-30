@@ -1,9 +1,23 @@
-import { FC, useEffect } from 'react';
+import { FC, useState, useEffect } from 'react';
 
 const ReleaseNotes: FC = () => {
-  const srcUrl = process.env.NODE_ENV === 'development'
-    ? process.env.REACT_APP_CCDI_CBIO_CONTENT_UI_URL
-    : 'https://cbiit.github.io/ccdi-cbio-content-ui'
+  const [srcUrl, setSrcUrl] = useState('');
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const tierName = window.location.hostname.split('.')[0].split('-')[1];
+      const isLocalEnv = process.env.NODE_ENV === 'development';
+      const isDevEnv = (tierName === 'dev') || (tierName === 'qa');
+      if (isLocalEnv) {
+        setSrcUrl(process.env.REACT_APP_CCDI_CBIO_CONTENT_UI_URL);
+      } else {
+        setSrcUrl(
+          isDevEnv
+            ? 'https://cbiit.github.io/ccdi-cbio-content-ui?dev'
+            : 'https://cbiit.github.io/ccdi-cbio-content-ui'
+        );
+      }
+    }
+  }, []);
 
   useEffect(() => {
     window.addEventListener('message', (e) => {

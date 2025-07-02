@@ -5,7 +5,7 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
   // const navigate = useNavigate();
   // CCDI-TODO: Make the iframe height fit for the content
   useEffect(() => {
-    window.addEventListener('message', (e) => {
+    const messageHandler = (e: MessageEvent) => {
       const iframeTag = document.getElementById(id);
       const eventName = e.data[0];
       const data = e.data[1];
@@ -19,7 +19,12 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
           window.history.replaceState({}, '', window.location.protocol + "//" + window.location.host + data);
           break;
       }
-    }, false);
+    };
+    window.addEventListener('message', messageHandler, false);
+
+    return () => {
+      window.removeEventListener('message', messageHandler);
+    };
   }, []);
   // useEffect(() => {
   //   window.addEventListener('message', (e) => {

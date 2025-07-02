@@ -22,7 +22,7 @@ const StaticContentIframePage: FC<{
   }, []);
 
   useEffect(() => {
-    window.addEventListener('message', (e) => {
+    const messageHandler = (e: MessageEvent) => {
       const iframeTag = document.getElementById(id);
       const eventName = e.data[0];
       const data = e.data[1];
@@ -33,7 +33,12 @@ const StaticContentIframePage: FC<{
           }
           break;
       }
-    }, false);
+    };
+    window.addEventListener('message', messageHandler, false);
+
+    return () => {
+      window.removeEventListener('message', messageHandler);
+    };
   }, []);
 
   return (

@@ -283,6 +283,8 @@ const NavBar = () => {
   const onKeyPressHandler = (e) => {
     if (e.key === "Enter") {
       handleMenuClick(e);
+    } else if (e.key === 'Escape') {
+      setClickedTitle("");
     }
   };
   type NavSubLinkData = {

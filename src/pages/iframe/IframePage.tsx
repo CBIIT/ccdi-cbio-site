@@ -1,9 +1,10 @@
 import { FC, useEffect, useContext } from 'react';
+import IframeOverlay from './IframeOverlay';
 import { DropdownContext } from '../../store/navbar-dropdown-context';
 // import { useNavigate } from "react-router-dom";
 
 const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlParams, id, title}) => {
-  const { clickedTitle } = useContext(DropdownContext);
+  const { clickedTitle, setClickedTitle } = useContext(DropdownContext);
   // const navigate = useNavigate();
   // CCDI-TODO: Make the iframe height fit for the content
   useEffect(() => {
@@ -49,18 +50,7 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
         width="100%"
         style={{border: 'none'}}
       />
-      {clickedTitle && (
-        <div
-          className="overlay"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%'
-          }}
-        ></div>
-      )}
+      {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}
     </div>
   );
 };

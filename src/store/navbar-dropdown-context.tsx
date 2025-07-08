@@ -7,6 +7,9 @@ type DropdownContextType = {
 
 export const DropdownContext = createContext<DropdownContextType>({
   clickedTitle: '',
-  // eslint-disable-next-line
-  setClickedTitle: (title: string) => {},
+  setClickedTitle: (title: string) => {
+    throw new Error(
+      'DropdownContext: "setClickedTitle" was called outside of a provider. Ensure your component is wrapped in the DropdownContext.Provider.'
+    );
+  },
 });

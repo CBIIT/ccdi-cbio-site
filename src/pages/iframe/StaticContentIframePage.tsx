@@ -1,4 +1,5 @@
 import { FC, useState, useEffect, useContext } from 'react';
+import IframeOverlay from './IframeOverlay';
 import { DropdownContext } from '../../store/navbar-dropdown-context';
 
 const StaticContentIframePage: FC<{
@@ -7,7 +8,7 @@ const StaticContentIframePage: FC<{
   id: string,
   title: string
 }> = ({ localUrl, liveUrl, id, title }) => {
-  const { clickedTitle } = useContext(DropdownContext);
+  const { clickedTitle, setClickedTitle } = useContext(DropdownContext);
   const [srcUrl, setSrcUrl] = useState<string>('');
 
   useEffect(() => {
@@ -56,18 +57,7 @@ const StaticContentIframePage: FC<{
         width="100%"
         style={{border: 'none'}}
       />
-      {clickedTitle && (
-        <div
-          className="overlay"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%'
-          }}
-        ></div>
-      )}
+      {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}
     </div>
   );
 };

@@ -1,8 +1,9 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { navMobileList, navbarSublists } from '../../../config/globalHeaderData';
+import { DropdownContext } from '../../../store/navbar-dropdown-context';
 
 const Nav = styled.div`
     top: 0;
@@ -249,7 +250,7 @@ const useOutsideAlerter = (ref) => {
         (event.target.getAttribute("class") !== "dropdownList" && ref.current && !ref.current.contains(event.target))
       ) {
         const toggle = document.getElementsByClassName("navText clicked");
-        if (toggle[0] && !event.target.getAttribute("class").includes("navText clicked")) {
+        if (toggle[0] && !event.target.getAttribute("class")?.includes("navText clicked")) {
           const temp: HTMLElement = toggle[0] as HTMLElement;
           temp.click();
         }
@@ -264,7 +265,7 @@ const useOutsideAlerter = (ref) => {
 };
 
 const NavBar = () => {
-  const [clickedTitle, setClickedTitle] = useState("");
+  const { clickedTitle, setClickedTitle } = useContext(DropdownContext);
   const dropdownSelection = useRef(null);
   // Exclude Login from Navbar
   // const filteredNavMobileList = navMobileList.filter((item) => !item.notExistInNav);
@@ -273,7 +274,7 @@ const NavBar = () => {
   useOutsideAlerter(dropdownSelection);
 
   const handleMenuClick = (e) => {
-    if (e.target.innerText === clickedTitle || !clickableTitle.includes(e.target.innerText)) {
+    if (e.target.innerText === clickedTitle || !clickableTitle?.includes(e.target.innerText)) {
       setClickedTitle("");
     } else {
       setClickedTitle(e.target.innerText);
@@ -287,6 +288,7 @@ const NavBar = () => {
       setClickedTitle("");
     }
   };
+
   type NavSubLinkData = {
     name: string;
     link: string;

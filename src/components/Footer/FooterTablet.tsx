@@ -18,18 +18,18 @@ const FooterContainer = styled.div`
   margin-right: auto;  
   display: flex;
   justify-content: space-between;
-
 `;
 
 const FooterEmailSignupContainer = styled.form`
   width: 33.3%;
+
   .signUpTitle {
     font-family: poppins;
     font-weight: 700;
     font-size: 22.88px;
     line-height: 34px;
     color: #FFFFFF;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .enterTitle {
@@ -38,7 +38,6 @@ const FooterEmailSignupContainer = styled.form`
     font-size: 16px;
     line-height: 22px;
     color: #FFFFFF;
-    // margin-bottom: 10px;
   }
 
   .signUpInputBox {
@@ -61,7 +60,7 @@ const FooterEmailSignupContainer = styled.form`
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
-    color: #00314b;
+    color: #1b1b1b;
     margin-top: 1.25rem;
   }
 
@@ -71,7 +70,7 @@ const FooterEmailSignupContainer = styled.form`
 
   .errorEmail {
     background: #e41154;
-    padding: 10px 5px 5px 5px;
+    padding: 0.5rem;
 
     .signUpInputBox {
       outline: 0.25rem solid #2491ff;
@@ -127,7 +126,7 @@ const FooterLinksContainer = styled.div`
 `;
 
 const BottomFooter = styled.div`
- background: #00314b;
+  background: #00314b;
 
   span {
     display: block;
@@ -207,7 +206,6 @@ const BottomFooter = styled.div`
     margin-right: 10px;
   }
 
-
   #bottom-footer-follow-us {
     font-family: 'Poppins';
     font-style: normal;
@@ -244,12 +242,12 @@ const BottomFooter = styled.div`
   }
 
   #bottom-footer-follow-us-links {
-        margin-top: 0.75rem;
+    margin-top: 0.75rem;
   }
 
   #bottom-footer-gov-links {
-      margin-right: 0px;
-      margin-top: 0.75rem;
+    margin-right: 0px;
+    margin-top: 0.75rem;
   }
 `;
 
@@ -313,13 +311,11 @@ const FooterTablet = () => {
             </div>
             <div className={errorClass !== "" ? 'ErrorBorder' : null}>
               <div className="enterTitle">
-                <label htmlFor="email">
-                  Enter your email address
-                  <div className={errorClass}>
-                    {errorClass !== "" ? <div className="enterTitle">Enter a valid email address</div> : null}
-                    <input id="email" type="email" name="email" className="signUpInputBox" value={emailContent} onChange={(e) => handleChange(e)} />
-                  </div>
-                </label>
+                <label htmlFor="email">Enter your email address</label>
+                <div style={{marginTop: errorClass !== '' ? null : '0.5rem'}} className={errorClass}>
+                  {errorClass !== "" ? <div className="enterTitle" style={{marginBottom: '10px'}}>Enter a valid email address</div> : null}
+                  <input id="email" type="email" className="signUpInputBox" value={emailContent} onChange={(e) => handleChange(e)} />
+                </div>
               </div>
 
             </div>

@@ -19,6 +19,10 @@ export default {
       title: 'About',
       items: [
         {
+          text: 'About CCDI cBioPortal',
+          link: '/about-ccdi-cbioportal',
+        },
+        {
           text: 'About CCDI Hub',
           link: 'https://ccdi.cancer.gov/about',
         },

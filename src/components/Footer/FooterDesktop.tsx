@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import FooterData from '../../config/globalFooterData';
 
 const FooterStyled = styled.footer`
-  background-color: #1B496E;
+  background-color: #004971;
   border-top: 1px solid #6C727B;
   bottom: 0;
   width: 100%;
@@ -38,7 +38,7 @@ const FooterEmailSignupContainer = styled.form`
     font-size: 16px;
     line-height: 22px;
     color: #FFFFFF;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
   }
 
   .signUpInputBox {
@@ -61,8 +61,8 @@ const FooterEmailSignupContainer = styled.form`
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
-    color: #14315C;
-    margin-top: 18px;
+    color: #00314b;
+    margin-top: 1.25rem;
   }
 
   .signUpButton:hover {
@@ -127,7 +127,7 @@ const FooterLinksContainer = styled.div`
 `;
 
 const BottomFooter = styled.div`
- background: #14315C;
+ background: #00314b;
 
   span {
     display: block;
@@ -298,7 +298,7 @@ const FooterDesktop = () => {
             <div className={errorClass !== "" ? 'ErrorBorder' : null}>
               <div className="enterTitle">
                 <label htmlFor="email">
-                  Enter your email address
+                  <div style={{marginBottom: '0.5rem'}}>Enter your email address</div>
                   <div className={errorClass}>
                     {errorClass !== "" ? <div className="enterTitle">Enter a valid email address</div> : null}
                     <input id="email" type="email" name="email" className="signUpInputBox" value={emailContent} onChange={(e) => handleChange(e)} />

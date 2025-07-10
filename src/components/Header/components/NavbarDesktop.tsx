@@ -6,35 +6,36 @@ import { navMobileList, navbarSublists } from '../../../config/globalHeaderData'
 import { DropdownContext } from '../../../store/navbar-dropdown-context';
 
 const Nav = styled.div`
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    box-shadow: -0.1px 6px 9px -6px rgba(0, 0, 0, 0.5);
-    z-index: 1100;
-    position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: -0.1px 6px 9px -6px rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  position: relative;
 
-    .dropdownContainer {
-      // outline: none;
-      // visibility: hidden;
-      // opacity: 0;
-      margin: 0 auto;
-      position: relative;
-      width: 1400px;
-    }
-    .invisible {
-      visibility: hidden;
-    }
- `;
+  .dropdownContainer {
+    // outline: none;
+    // visibility: hidden;
+    // opacity: 0;
+    margin: 0 auto;
+    position: relative;
+    width: 1400px;
+  }
+
+  .invisible {
+    visibility: hidden;
+  }
+`;
 
 const NavContainer = styled.div`
-    margin: 0 auto;
-    max-width: 1400px;
-    text-align: left;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+  margin: 0 auto;
+  max-width: 1400px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
 `;
 
 const UlContainer = styled.ul`
@@ -66,8 +67,8 @@ const LiSection = styled.li`
     line-height: 40px;
     letter-spacing: normal;
     text-decoration: none;
-    margin: 0 45px 0 5px;
-    padding: 0 15px;
+    // margin: 0 45px 0 5px;
+    padding: 0 1rem;
     user-select:none;
     border-top: 4px solid transparent;
     border-left: 4px solid transparent;
@@ -114,7 +115,7 @@ const LiSection = styled.li`
 
   .clicked {
     color: #FFFFFF;
-    background: #1F4671;
+    background: #004971;
   }
 
   .clicked::after {
@@ -126,7 +127,7 @@ const LiSection = styled.li`
   }
 
   .clicked:hover {
-    border-bottom: 4px solid #1F4671;
+    border-bottom: 4px solid #004971;
     color: #FFFFFF;
 
     ::after {
@@ -153,9 +154,11 @@ const LiSection = styled.li`
       display: none;
     }
   }
+
   .shouldBeUnderlined {
     border-bottom: 4px solid #3A75BD;
   }
+
   .navTitleClicked {
     display: block;
     color: #FFFFFF;
@@ -165,10 +168,10 @@ const LiSection = styled.li`
     line-height: 40px;
     letter-spacing: normal;
     text-decoration: none;
-    margin: 0 45px 0 5px;
-    padding: 0 15px;
+    // margin: 0 45px 0 5px;
+    padding: 0 1rem;
     user-select:none;
-    background: #1F4671;
+    background: #004971;
     border-top: 4px solid #5786FF;
     border-left: 4px solid #5786FF;
     border-right: 4px solid #5786FF;
@@ -176,40 +179,40 @@ const LiSection = styled.li`
 `;
 
 const Dropdown = styled.div`
-    top: 60.5px;
-    left: 0;
-    width: 100%;
-    background: #1F4671;
-    z-index: 1100;
-    position: absolute;
-    // visibility: hidden;
-    // outline: none;
-    // opacity: 0;
+  top: 60.5px;
+  left: 0;
+  width: 100%;
+  background: #004971;
+  z-index: 1100;
+  position: absolute;
+  // visibility: hidden;
+  // outline: none;
+  // opacity: 0;
 `;
 
 const DropdownContainer = styled.div`
-    margin: 0 auto;
+  margin: 0 auto;
+  text-align: left;
+  position: relative;
+  max-width: 1400px;
+
+  .dropdownList {
+    background: #004971;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  .dropdownItem {
+    padding: 0 0 2.5rem 0;
     text-align: left;
-    position: relative;
-    max-width: 1400px;
-
-    .dropdownList {
-      background: #1F4671;
-      display: grid;
-      grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-      padding: 32px 32px 0 32px;
-    }
-
-    .dropdownItem {
-      padding: 0 10px 52px 10px;
-      text-align: left;
-      font-family: 'Poppins';
-      font-weight: 600;
-      font-style: normal;
-      font-size: 20px;
-      line-height: 110%;
-      color: #FFFFFF;
-      text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 110%;
+    color: #FFFFFF;
+    text-decoration: none;
   }
 
   .dropdownItem:hover {

@@ -311,13 +311,32 @@ const FooterTablet = () => {
             </div>
             <div className={errorClass !== "" ? 'ErrorBorder' : null}>
               <div className="enterTitle">
-                <label htmlFor="email">Enter your email address</label>
-                <div style={{marginTop: errorClass !== '' ? null : '0.5rem'}} className={errorClass}>
-                  {errorClass !== "" ? <div className="enterTitle" style={{marginBottom: '10px'}}>Enter a valid email address</div> : null}
-                  <input id="email" type="email" className="signUpInputBox" value={emailContent} onChange={(e) => handleChange(e)} />
+                <label htmlFor="email-tablet">
+                  Enter your email address
+                </label>
+                <div
+                  style={{marginTop: errorClass !== '' ? null : '0.5rem'}}
+                  className={errorClass}
+                >
+                  {
+                    errorClass !== ""
+                      ? (
+                        <div
+                          className="enterTitle"
+                          style={{marginBottom: '10px'}}
+                        >Enter a valid email address</div>
+                      )
+                      : null
+                  }
+                  <input
+                    id="email-tablet"
+                    type="email"
+                    className="signUpInputBox"
+                    value={emailContent}
+                    onChange={(e) => handleChange(e)}
+                  />
                 </div>
               </div>
-
             </div>
             <button type="submit" className="signUpButton">
               Sign up

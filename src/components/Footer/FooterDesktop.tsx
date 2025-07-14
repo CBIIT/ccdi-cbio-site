@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import FooterData from '../../config/globalFooterData';
 
 const FooterStyled = styled.footer`
-  background-color: #1B496E;
+  background-color: #004971;
   border-top: 1px solid #6C727B;
   bottom: 0;
   width: 100%;
@@ -18,18 +18,18 @@ const FooterContainer = styled.div`
   margin-right: auto;  
   display: flex;
   justify-content: space-between;
-
 `;
 
 const FooterEmailSignupContainer = styled.form`
   width: 33.3%;
+
   .signUpTitle {
     font-family: poppins;
     font-weight: 700;
     font-size: 22.88px;
     line-height: 34px;
     color: #FFFFFF;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .enterTitle {
@@ -38,7 +38,6 @@ const FooterEmailSignupContainer = styled.form`
     font-size: 16px;
     line-height: 22px;
     color: #FFFFFF;
-    margin-bottom: 10px;
   }
 
   .signUpInputBox {
@@ -61,8 +60,8 @@ const FooterEmailSignupContainer = styled.form`
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
-    color: #14315C;
-    margin-top: 18px;
+    color: #1b1b1b;
+    margin-top: 1.25rem;
   }
 
   .signUpButton:hover {
@@ -71,10 +70,9 @@ const FooterEmailSignupContainer = styled.form`
 
   .errorEmail {
     background: #e41154;
-    padding: 10px 5px 5px 5px;
+    padding: 0.5rem;
 
-    .signUpInputBox {
-      outline: 0.25rem solid #2491ff;
+    .signUpInputBox:focus {
       outline-offset: 5px;
     }
   }
@@ -83,8 +81,11 @@ const FooterEmailSignupContainer = styled.form`
     position: relative;
     border-left: 0.25rem solid #e41154;
     padding-left: 1rem;
-    left: -20px;
-  }
+    margin-left: -1.25rem;
+
+    label {
+      font-weight: 600;
+    }
 `;
 
 const FooterLinksContainer = styled.div`
@@ -127,7 +128,7 @@ const FooterLinksContainer = styled.div`
 `;
 
 const BottomFooter = styled.div`
- background: #14315C;
+ background: #00314b;
 
   span {
     display: block;
@@ -241,6 +242,7 @@ const FooterDesktop = () => {
   const [errorClass, setErrorClass] = useState("");
   const [emailContent, setEmailContent] = useState("");
   const emailForm = useRef(null);
+  const emailFormInput = useRef(null);
 
   function validateEmail(email) {
     const reg = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;
@@ -251,6 +253,7 @@ const FooterDesktop = () => {
     if (!validateEmail(emailContent)) {
       setErrorClass("errorEmail");
       e.preventDefault();
+      emailFormInput.current.focus();
     } else {
       setErrorClass("");
       emailForm.current.submit();
@@ -299,14 +302,32 @@ const FooterDesktop = () => {
               <div className="enterTitle">
                 <label htmlFor="email">
                   Enter your email address
-                  <div className={errorClass}>
-                    {errorClass !== "" ? <div className="enterTitle">Enter a valid email address</div> : null}
-                    <input id="email" type="email" name="email" className="signUpInputBox" value={emailContent} onChange={(e) => handleChange(e)} />
-                  </div>
                 </label>
-
+                <div
+                  style={{marginTop: errorClass !== '' ? null : '0.5rem'}}
+                  className={errorClass}
+                >
+                  {
+                    errorClass !== ""
+                      ? (
+                        <div
+                          className="enterTitle"
+                          style={{marginBottom: '10px'}}
+                        >Enter a valid email address</div>
+                      )
+                      : null
+                  }
+                  <input
+                    ref={emailFormInput}
+                    id="email"
+                    type="email"
+                    name="email"
+                    className="signUpInputBox"
+                    value={emailContent}
+                    onChange={(e) => handleChange(e)}
+                  />
+                </div>
               </div>
-
             </div>
             <button type="submit" className="signUpButton">
               Sign up

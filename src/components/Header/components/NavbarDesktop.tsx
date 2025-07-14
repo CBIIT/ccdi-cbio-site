@@ -41,8 +41,7 @@ const NavContainer = styled.div`
 const UlContainer = styled.ul`
   list-style: none;
   margin: 0;
-  padding-top: 17px;
-  padding-left: 11px;
+  padding: 1rem 0 0 0.75rem;
 `;
 
 const LiSection = styled.li`

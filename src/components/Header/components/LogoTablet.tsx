@@ -3,16 +3,16 @@ import styled from 'styled-components';
 import { headerData } from '../../../config/globalHeaderData';
 
 const LogoArea = styled.div`
-    display: flex;
+  display: flex;
 
-    .logoContainer {
-      margin-top: 32px;
+  .logoContainer {
+    margin-top: 32px;
 
-      img {
-        height: 50px;
-        max-width: 350px;
-      }
+    img {
+      height: 50px;
+      max-width: 350px;
     }
+  }
 `;
 
 const Logo = () => (

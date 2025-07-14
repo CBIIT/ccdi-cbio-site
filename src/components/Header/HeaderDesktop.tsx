@@ -9,22 +9,22 @@ const HeaderBanner = styled.div`
 `;
 
 const HeaderContainer = styled.div`
-    margin: 0 auto;
-    padding-left: 32px;
-    max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 32px;
+  max-width: 1400px;
+  display: flex;
+
+  .searchBarArea {
+    padding: 5px 32px 0 0;
+  }
+
+  .headerLowerContainer {
     display: flex;
+    margin-left: auto;
+  }
 
-    .searchBarArea {
-        padding: 5px 32px 0 0;
-    }
-
-    .headerLowerContainer {
-        display: flex;
-        margin-left: auto;
-    }
-
-    .searchBarArea {
-      margin-top: 42px;
+  .searchBarArea {
+    margin-top: 42px;
   }
 `;
 

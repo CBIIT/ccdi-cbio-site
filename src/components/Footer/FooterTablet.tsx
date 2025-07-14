@@ -72,8 +72,7 @@ const FooterEmailSignupContainer = styled.form`
     background: #e41154;
     padding: 0.5rem;
 
-    .signUpInputBox {
-      outline: 0.25rem solid #2491ff;
+    .signUpInputBox:focus {
       outline-offset: 5px;
     }
   }
@@ -82,7 +81,11 @@ const FooterEmailSignupContainer = styled.form`
     position: relative;
     border-left: 0.25rem solid #e41154;
     padding-left: 1rem;
-    left: -20px;
+    margin-left: -1.25rem;
+
+    label {
+      font-weight: 600;
+    }
   }
 `;
 
@@ -255,6 +258,7 @@ const FooterTablet = () => {
   const [errorClass, setErrorClass] = useState("");
   const [emailContent, setEmailContent] = useState("");
   const emailForm = useRef(null);
+  const emailFormInput = useRef(null);
 
   function validateEmail(email) {
     const reg = /^[A-Za-z0-9]+([_.-][A-Za-z0-9]+)*@([A-Za-z0-9-]+\.)+[A-Za-z]{2,6}$/;
@@ -265,6 +269,7 @@ const FooterTablet = () => {
     if (!validateEmail(emailContent)) {
       setErrorClass("errorEmail");
       e.preventDefault();
+      emailFormInput.current.focus();
     } else {
       setErrorClass("");
       emailForm.current.submit();
@@ -329,8 +334,10 @@ const FooterTablet = () => {
                       : null
                   }
                   <input
+                    ref={emailFormInput}
                     id="email-tablet"
                     type="email"
+                    name="email"
                     className="signUpInputBox"
                     value={emailContent}
                     onChange={(e) => handleChange(e)}

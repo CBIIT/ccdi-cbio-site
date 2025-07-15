@@ -18,7 +18,7 @@ function sanitizeSize(value: string | number): string {
   }
 
   // Allow numbers with units (e.g., 100px, 50%) and check upper bound
-  const match = value.match(/^(\d+)(px|em|rem|%)$/);
+  const match = value.match(/^(\d+)(px|em|rem|%|vh|vw)$/);
   if (match) {
     const num = parseInt(match[1], 10);
     if (num > 0 && num <= MAX_SIZE) {

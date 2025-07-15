@@ -4,16 +4,29 @@ import styled from 'styled-components';
 // Allow only numbers (optionally with px, %, em, rem) or a whitelist of safe strings
 const allowedStrings = ['auto', 'inherit', 'initial', 'unset', '100%', '100vw', '100vh'];
 function sanitizeSize(value: string | number): string {
+  const MAX_SIZE = 5000;
+
   if (typeof value === 'number') {
-    return value + 'px';
+    if (value > 0 && value <= MAX_SIZE) {
+      return value + 'px';
+    }
+    return 'auto';
   }
+
   if (allowedStrings.includes(value)) {
     return value;
   }
-  // Allow numbers with units (e.g., 100px, 50%)
-  if (/^\d+(px|em|rem|%)$/.test(value)) {
-    return value;
+
+  // Allow numbers with units (e.g., 100px, 50%) and check upper bound
+  const match = value.match(/^(\d+)(px|em|rem|%)$/);
+  if (match) {
+    const num = parseInt(match[1], 10);
+    if (num > 0 && num <= MAX_SIZE) {
+      return value;
+    }
+    return 'auto';
   }
+
   // Fallback to 'auto' if invalid
   return 'auto';
 }
@@ -54,13 +67,11 @@ export default function IframeBody({
         title={title}
         id={id}
         className={className}
-        width={width}
-        height={height}
         $height={height}
         $width={width}
         {...props}
       />
-      { children }
+      {children}
     </>
   );
 }

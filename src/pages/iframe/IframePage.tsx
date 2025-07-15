@@ -46,7 +46,7 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
         id={id}
         className="iframePage"
         title={title}
-        height="600vh"
+        height="600px"
         width="100%"
       >
         {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}

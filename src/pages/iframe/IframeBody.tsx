@@ -25,8 +25,7 @@ export default function IframeBody({
       <iframe
         src={srcUrl}
         title={title}
-        height={height}
-        width={width}
+        style={{ height, width }}
         id={id}
         className={className}
         {...props}

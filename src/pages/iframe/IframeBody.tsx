@@ -14,7 +14,7 @@ interface IframeBodyProps extends IframeHTMLAttributes<HTMLIFrameElement> {
   width: string | number;
   id: string;
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export default function IframeBody({

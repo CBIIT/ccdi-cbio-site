@@ -1,4 +1,11 @@
 import { ReactNode, IframeHTMLAttributes } from 'react';
+import styled from 'styled-components';
+
+const StyledIframe = styled.iframe`
+  border: none;
+  height: ${props => props.height};
+  width: ${props => props.width};
+`;
 
 interface IframeBodyProps extends IframeHTMLAttributes<HTMLIFrameElement> {
   srcUrl: string;
@@ -22,12 +29,13 @@ export default function IframeBody({
 }: IframeBodyProps) {
   return (
     <>
-      <iframe
+      <StyledIframe
         src={srcUrl}
         title={title}
-        style={{ height, width }}
         id={id}
         className={className}
+        width={width}
+        height={height}
         {...props}
       />
       { children }

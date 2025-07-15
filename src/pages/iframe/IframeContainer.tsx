@@ -4,10 +4,6 @@ import styled from 'styled-components';
 const IframeContainerWrapper = styled.div`
   width: 100%;
   position: relative;
-
-  .iframePage {
-    border: none;
-  }
 `;
 
 export default function IframeContainer({ id, children }: { id: string, children: ReactNode }) {

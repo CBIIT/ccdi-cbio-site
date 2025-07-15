@@ -1,13 +1,11 @@
 import { FC } from 'react';
 import IframePage from './iframe/IframePage';
+import SilentPageHeader from '../components/helpers/SilentPageHeader';
 
 const Home: FC = () => {
   return (
     <>
-      <h1
-        aria-label="CCDI cBioPortal Home page"
-        style={{margin: 0, padding: 0}}
-      ></h1>
+      <SilentPageHeader title="CCDI cBioPortal Home page" />
 
       <IframePage
         urlParams="/"

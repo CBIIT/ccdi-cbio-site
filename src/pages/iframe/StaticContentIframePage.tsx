@@ -1,4 +1,6 @@
 import { FC, useState, useEffect, useContext } from 'react';
+import IframeContainer from './IframeContainer';
+import IframeBody from './IframeBody';
 import IframeOverlay from './IframeOverlay';
 import { DropdownContext } from '../../store/navbar-dropdown-context';
 
@@ -45,20 +47,18 @@ const StaticContentIframePage: FC<{
   }, []);
 
   return (
-    <div
-      id={`${id}-iframe-container`}
-      style={{width: '100%', position: 'relative'}}
-    >
-      <iframe
-        src={srcUrl}
+    <IframeContainer id={`${id}-iframe-container`}>
+      <IframeBody
+        srcUrl={srcUrl}
         id={id}
+        className="iframePage"
         title={title}
         height="300vh"
         width="100%"
-        style={{border: 'none'}}
-      />
-      {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}
-    </div>
+      >
+        {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}
+      </IframeBody>
+    </IframeContainer>
   );
 };
 

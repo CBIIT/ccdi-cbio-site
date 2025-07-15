@@ -1,12 +1,12 @@
-import { ReactNode } from 'react';
+import { ReactNode, IframeHTMLAttributes } from 'react';
 
-interface IframeBodyProps {
+interface IframeBodyProps extends IframeHTMLAttributes<HTMLIFrameElement> {
   srcUrl: string;
   title: string;
   height: string | number;
   width: string | number;
   id: string;
-  className: string;
+  className?: string;
   children: ReactNode;
 }
 

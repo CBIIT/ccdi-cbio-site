@@ -9,5 +9,5 @@ const PageHeader = styled.h1`
 `;
 
 export default function SilentPageHeader({ title }: { title: string }) {
-  return <PageHeader>{title}</PageHeader>;
+  return <PageHeader role="heading" aria-level={1}>{title}</PageHeader>;
 }

@@ -52,7 +52,7 @@ const StaticContentIframePage: FC<{
         srcUrl={srcUrl}
         id={id}
         title={title}
-        height="100vh"
+        height="300px"
         width="100%"
       >
         {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}

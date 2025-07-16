@@ -45,7 +45,7 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
         srcUrl={`${process.env.REACT_APP_CCDI_CBIO_IFRAME_URL}${urlParams}`}
         id={id}
         title={title}
-        height="100vh"
+        height="600px"
         width="100%"
       >
         {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}

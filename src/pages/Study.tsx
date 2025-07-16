@@ -1,13 +1,11 @@
 import { FC } from 'react';
 import AdvancedIframePage from './iframe/AdvancedIframePage';
+import SilentPageHeader from '../components/helpers/SilentPageHeader';
 
 const Study: FC = () => {
   return (
     <>
-      <h1
-        aria-label="CCDI cBioPortal Study page"
-        style={{margin: 0, padding: 0}}
-      ></h1>
+      <SilentPageHeader title="CCDI cBioPortal Study page" />
 
       <AdvancedIframePage
         id="ccdi-cbioportal-study-page"

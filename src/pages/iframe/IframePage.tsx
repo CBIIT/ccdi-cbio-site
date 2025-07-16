@@ -1,4 +1,6 @@
 import { FC, useEffect, useContext } from 'react';
+import IframeContainer from './IframeContainer';
+import IframeBody from './IframeBody';
 import IframeOverlay from './IframeOverlay';
 import { DropdownContext } from '../../store/navbar-dropdown-context';
 // import { useNavigate } from "react-router-dom";
@@ -38,20 +40,17 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
   // }, []);
 
   return (
-    <div
-      id={`${id}-iframe-container`}
-      style={{width: '100%', position: 'relative'}}
-    >
-      <iframe
-        src={`${process.env.REACT_APP_CCDI_CBIO_IFRAME_URL}${urlParams}`}
+    <IframeContainer id={`${id}-iframe-container`}>
+      <IframeBody
+        srcUrl={`${process.env.REACT_APP_CCDI_CBIO_IFRAME_URL}${urlParams}`}
         id={id}
         title={title}
-        height="600vh"
+        height="100vh"
         width="100%"
-        style={{border: 'none'}}
-      />
-      {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}
-    </div>
+      >
+        {clickedTitle && <IframeOverlay setTitle={setClickedTitle} />}
+      </IframeBody>
+    </IframeContainer>
   );
 };
 

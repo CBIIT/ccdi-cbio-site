@@ -1,19 +1,20 @@
 import { FC } from 'react';
+import styled from 'styled-components';
+
+const LoginContainer = styled.div`
+  margin: 20vh auto;
+  display: flex;
+  flex-flow: column;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+`;
 
 const Login: FC = () => {
   return (
-    <div
-      style={{
-        margin: '20vh auto',
-        display: 'flex',
-        flexFlow: 'column',
-        fontWeight: 'bold',
-        fontSize: '1.5rem',
-        textAlign: 'center'
-      }}
-    >
+    <LoginContainer>
       This is Login Page.
-    </div>
+    </LoginContainer>
   );
 };
 

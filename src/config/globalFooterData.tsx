@@ -35,17 +35,13 @@ export default {
           link: 'https://docs.cbioportal.org/about-us/',
         },
         {
-          text: 'Contact CCDI Hub',
+          text: 'Contact Us',
           link: 'mailto:NCIChildhoodCancerDataInitiative@mail.nih.gov',
         },
       ],
     }, {
       title: 'Resources',
       items: [
-        {
-          text: 'Contact Us',
-          link: 'https://www.cancer.gov/contact',
-        },
         {
           text: 'Publications',
           link: 'https://www.cancer.gov/publications',

@@ -39,7 +39,8 @@ export default {
           link: 'mailto:NCIChildhoodCancerDataInitiative@mail.nih.gov',
         },
       ],
-    }, {
+    },
+    {
       title: 'Resources',
       items: [
         {
@@ -111,20 +112,8 @@ export default {
   ],
   contact_links: [
     {
-      text: 'Live chat',
-      link: 'https://livehelp.cancer.gov/',
-    },
-    {
-      text: '1-800-4-CANCER',
-      link: 'tel:+18004226237',
-    },
-    {
       text: 'NCIChildhoodCancerDataInitiative@mail.nih.gov',
       link: 'mailto:NCIChildhoodCancerDataInitiative@mail.nih.gov',
-    },
-    {
-      text: 'Site Feedback',
-      link: 'https://nci.az1.qualtrics.com/jfe/form/SV_aeLLobt6ZeGVn5I',
     },
   ],
   global_footer_links: [

@@ -39,7 +39,8 @@ export default {
           link: 'mailto:NCIChildhoodCancerDataInitiative@mail.nih.gov',
         },
       ],
-    }, {
+    },
+    {
       title: 'Resources',
       items: [
         {

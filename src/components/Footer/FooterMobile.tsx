@@ -163,6 +163,7 @@ const FooterLinksContainer = styled.div`
 
   .show {
     display:block;
+    padding-left: 1rem;
   }
 
   .arrow {

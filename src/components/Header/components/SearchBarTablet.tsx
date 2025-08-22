@@ -9,7 +9,7 @@ const SearchBarContainer = styled.div`
 
     .searchBar {
       margin-left: auto;
-      width: 303px;
+      width: 100%;
       height: 43px;
       border: 1px solid #71767A;
     }

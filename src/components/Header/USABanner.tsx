@@ -25,9 +25,8 @@ const BannerContainer = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
-    line-height: 16px;
+    line-height: normal;
     width: fit-content;
-    height: 16px;
   }
 
   @media (max-width: 1023px) {

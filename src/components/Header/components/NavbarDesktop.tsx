@@ -203,6 +203,7 @@ const DropdownContainer = styled.div`
   }
 
   .dropdownItem {
+    max-width: 250px;
     padding: 0 0 2.5rem 0;
     text-align: left;
     font-family: 'Poppins';

@@ -6,7 +6,7 @@ async function fetchAPIVersion() {
     return { portalVersion: 'REACT_APP_API_VERSION not specified' };
   }
   try {
-    const response = await fetch(apiVersion);
+    const response = await fetch(apiVersion, { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error('Failed to fetch API version');
@@ -26,7 +26,7 @@ async function fetchSessionServiceVersion() {
     return 'REACT_APP_SESSION_SERVICE_VERSION not specified';
   }
   try {
-    const response = await fetch(sessionServiceVersion);
+    const response = await fetch(sessionServiceVersion, { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error('Failed to fetch Session Service version');
@@ -94,7 +94,7 @@ const Info: FC = () => {
         frontendData
       ] = values;
 
-      setApiVersion(apiData.portalVersion);
+      setApiVersion(apiData.portalVersion ?? 'Unknown');
       setSessionServiceVersion(sessionServiceData);
       setContentUIVersion(contentUIData);
       setFrontendVersion(frontendData);
@@ -109,7 +109,7 @@ const Info: FC = () => {
       <div>
         Frontend versions
         <ul>
-          <li>App (ccdi-cbio-site) version: <b>{process.env.REACT_APP_VERSION}</b></li>
+          <li>App (ccdi-cbio-site) version: <b>{process.env.REACT_APP_VERSION || 'unknown'}</b></li>
           <li>IFrame (ccdi-cbio-frontend) version: <b>{frontendVersion}</b></li>
           <li>Content UI (ccdi-cbio-content-ui) version: <b>{contentUIVersion}</b></li>
         </ul>

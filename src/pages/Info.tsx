@@ -1,8 +1,12 @@
 import { FC, useEffect, useState } from 'react';
 
 async function fetchAPIVersion() {
+  const apiVersion = process.env.REACT_APP_API_VERSION;
+  if (!apiVersion) {
+    return { portalVersion: 'REACT_APP_API_VERSION not specified' };
+  }
   try {
-    const response = await fetch(process.env.REACT_APP_API_VERSION);
+    const response = await fetch(apiVersion);
 
     if (!response.ok) {
       throw new Error('Failed to fetch API version');
@@ -17,8 +21,12 @@ async function fetchAPIVersion() {
 }
 
 async function fetchSessionServiceVersion() {
+  const sessionServiceVersion = process.env.REACT_APP_SESSION_SERVICE_VERSION;
+  if (!sessionServiceVersion) {
+    return 'REACT_APP_SESSION_SERVICE_VERSION not specified';
+  }
   try {
-    const response = await fetch(process.env.REACT_APP_SESSION_SERVICE_VERSION);
+    const response = await fetch(sessionServiceVersion);
 
     if (!response.ok) {
       throw new Error('Failed to fetch Session Service version');
@@ -33,8 +41,12 @@ async function fetchSessionServiceVersion() {
 }
 
 async function getContentUIVersion() {
+  const contentUIVersion = process.env.REACT_APP_CONTENT_UI_VERSION;
+  if (!contentUIVersion) {
+    return 'REACT_APP_CONTENT_UI_VERSION not specified';
+  }
   try {
-    const response = await fetch(process.env.REACT_APP_CONTENT_UI_VERSION, { cache: 'no-store' });
+    const response = await fetch(contentUIVersion, { cache: 'no-store' });
     if (!response.ok) throw new Error('Failed to fetch Content UI version');
     const meta = await response.json();
     return meta.version;
@@ -45,8 +57,12 @@ async function getContentUIVersion() {
 }
 
 async function getFrontendVersion() {
+  const frontendVersion = process.env.REACT_APP_FRONTEND_VERSION;
+  if (!frontendVersion) {
+    return 'REACT_APP_FRONTEND_VERSION not specified';
+  }
   try {
-    const response = await fetch(process.env.REACT_APP_FRONTEND_VERSION, { cache: 'no-store' });
+    const response = await fetch(frontendVersion, { cache: 'no-store' });
     if (!response.ok) throw new Error('Failed to fetch Frontend version');
     const meta = await response.json();
     return meta.version;
@@ -64,17 +80,24 @@ const Info: FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const apiData = await fetchAPIVersion();
-      setApiVersion(apiData.portalVersion);
+      Promise.all([
+        fetchAPIVersion(),
+        fetchSessionServiceVersion(),
+        getContentUIVersion(),
+        getFrontendVersion()
+      ]).then((values) => {
+        const [
+          apiData,
+          sessionServiceData,
+          contentUIData,
+          frontendData
+        ] = values;
 
-      const sessionServiceData = await fetchSessionServiceVersion();
-      setSessionServiceVersion(sessionServiceData);
-
-      const contentUIData = await getContentUIVersion();
-      setContentUIVersion(contentUIData);
-
-      const frontendData = await getFrontendVersion();
-      setFrontendVersion(frontendData);
+        setApiVersion(apiData.portalVersion);
+        setSessionServiceVersion(sessionServiceData);
+        setContentUIVersion(contentUIData);
+        setFrontendVersion(frontendData);
+      });
     };
 
     fetchData();

@@ -80,24 +80,24 @@ const Info: FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      Promise.all([
+      const values = await Promise.all([
         fetchAPIVersion(),
         fetchSessionServiceVersion(),
         getContentUIVersion(),
         getFrontendVersion()
-      ]).then((values) => {
-        const [
-          apiData,
-          sessionServiceData,
-          contentUIData,
-          frontendData
-        ] = values;
+      ]);
 
-        setApiVersion(apiData.portalVersion);
-        setSessionServiceVersion(sessionServiceData);
-        setContentUIVersion(contentUIData);
-        setFrontendVersion(frontendData);
-      });
+      const [
+        apiData,
+        sessionServiceData,
+        contentUIData,
+        frontendData
+      ] = values;
+
+      setApiVersion(apiData.portalVersion);
+      setSessionServiceVersion(sessionServiceData);
+      setContentUIVersion(contentUIData);
+      setFrontendVersion(frontendData);
     };
 
     fetchData();

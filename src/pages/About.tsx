@@ -4,8 +4,7 @@ import StaticContentIframePage from './iframe/StaticContentIframePage';
 const About: FC = () => {
   return (
     <StaticContentIframePage
-      localUrl={process.env.REACT_APP_CCDI_CBIO_ABOUT_URL}
-      liveUrl="https://cbiit.github.io/ccdi-cbio-content-ui/about"
+      url={process.env.REACT_APP_CCDI_CBIO_ABOUT_URL}
       id="about-ccdi-cbioportal"
       title="About CCDI cBioPortal"
     />

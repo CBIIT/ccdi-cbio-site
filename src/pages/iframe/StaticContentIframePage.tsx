@@ -5,25 +5,15 @@ import IframeOverlay from './IframeOverlay';
 import { DropdownContext } from '../../store/navbar-dropdown-context';
 
 const StaticContentIframePage: FC<{
-  localUrl: string,
-  liveUrl: string,
+  url: string,
   id: string,
   title: string
-}> = ({ localUrl, liveUrl, id, title }) => {
+}> = ({ url, id, title }) => {
   const { clickedTitle, setClickedTitle } = useContext(DropdownContext);
   const [srcUrl, setSrcUrl] = useState<string>('');
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const tierName = window.location.hostname.split('.')[0].split('-')[1];
-      const isLocalEnv = process.env.NODE_ENV === 'development';
-      const isDevEnv = (tierName === 'dev') || (tierName === 'qa');
-      if (isLocalEnv) {
-        setSrcUrl(localUrl);
-      } else {
-        setSrcUrl(isDevEnv ? `${liveUrl}?dev` : liveUrl);
-      }
-    }
+    setSrcUrl(url);
   }, []);
 
   useEffect(() => {

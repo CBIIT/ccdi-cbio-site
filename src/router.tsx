@@ -55,7 +55,15 @@ const routes: RouteObject[] = [
         element: <Study />
       },
       {
+        path: '/study/heatmaps',
+        element: <Study />
+      },
+      {
         path: '/study/cnSegments',
+        element: <Study />
+      },
+      {
+        path: '/study/filesAndLinks',
         element: <Study />
       },
       {
@@ -68,6 +76,10 @@ const routes: RouteObject[] = [
       },
       {
         path: '/results/oncoprint',
+        element: <Results />
+      },
+      {
+        path: '/results/survival',
         element: <Results />
       },
       {
@@ -91,6 +103,10 @@ const routes: RouteObject[] = [
         element: <Results />
       },
       {
+        path: '/results/coexpression',
+        element: <Results />
+      },
+      {
         path: '/results/comparison',
         element: <Results />
       },
@@ -99,7 +115,15 @@ const routes: RouteObject[] = [
         element: <Results />
       },
       {
+        path: '/results/network',
+        element: <Results />
+      },
+      {
         path: '/results/pathways',
+        element: <Results />
+      },
+      {
+        path: '/results/expression',
         element: <Results />
       },
       {
@@ -115,11 +139,39 @@ const routes: RouteObject[] = [
         element: <Patient />
       },
       {
-        path: '/patient/pathways',
+        path: '/patient/genomicEvolution',
         element: <Patient />
       },
       {
         path: '/patient/clinicalData',
+        element: <Patient />
+      },
+      {
+        path: '/patient/filesAndLinks',
+        element: <Patient />
+      },
+      {
+        path: '/patient/pathologyReport',
+        element: <Patient />
+      },
+      {
+        path: '/patient/tissueImage',
+        element: <Patient />
+      },
+      {
+        path: '/patient/MSKTissueImage',
+        element: <Patient />
+      },
+      {
+        path: '/patient/trialMatchTab',
+        element: <Patient />
+      },
+      {
+        path: '/patient/mutationalSignatures',
+        element: <Patient />
+      },
+      {
+        path: '/patient/pathways',
         element: <Patient />
       },
       {
@@ -135,6 +187,14 @@ const routes: RouteObject[] = [
         element: <Comparison />
       },
       {
+        path: '/comparison/mrna',
+        element: <Comparison />
+      },
+      {
+        path: '/comparison/protein',
+        element: <Comparison />
+      },
+      {
         path: '/comparison/survival',
         element: <Comparison />
       },
@@ -143,11 +203,31 @@ const routes: RouteObject[] = [
         element: <Comparison />
       },
       {
+        path: '/comparison/dna_methylation',
+        element: <Comparison />
+      },
+      {
         path: '/comparison/alterations',
         element: <Comparison />
       },
       {
+        path: '/comparison/generic_assay',
+        element: <Comparison />
+      },
+      {
+        path: '/comparison/generic_assay_binary',
+        element: <Comparison />
+      },
+      {
+        path: '/comparison/generic_assay_categorical',
+        element: <Comparison />
+      },
+      {
         path: '/comparison/mutations',
+        element: <Comparison />
+      },
+      {
+        path: '/comparison/pathways',
         element: <Comparison />
       },
       {

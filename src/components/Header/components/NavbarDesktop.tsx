@@ -191,21 +191,36 @@ const Dropdown = styled.div`
 
 const DropdownContainer = styled.div`
   margin: 0 auto;
-  text-align: left;
-  position: relative;
   max-width: 1400px;
+  padding: 20px 0 40px 0;
+  background: #004971;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 10px;
+  // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
   .dropdownList {
-    background: #004971;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 2rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 50px;
+    padding: 15px 32px 15px 2rem;
+  }
+
+  .dropdownRow {
+    display: flex;
+    align-items: center;
+    gap: 120px;
   }
 
   .dropdownItem {
-    max-width: 250px;
-    padding: 0 0 2.5rem 0;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
     font-family: 'Poppins';
     font-weight: 600;
     font-style: normal;
@@ -220,6 +235,13 @@ const DropdownContainer = styled.div`
   }
 
   .dropdownItemText {
+    // font-family: 'Poppins';
+    // font-weight: 600;
+    // font-style: normal;
+    // font-size: 20px;
+    // line-height: 110%;
+    // color: #FFFFFF;
+    // text-decoration: none;
     margin-top: 5px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -388,27 +410,51 @@ const NavBar = () => {
       <Dropdown ref={dropdownSelection} className={clickedTitle === '' ? "invisible" : ""}>
         <DropdownContainer>
           <div className="dropdownList">
-            {
-              clickedTitle !== "" ? navbarSublists[clickedTitle].map((dropItem, idx) => {
-                const dropkey = `drop_${idx}`;
-                return (
-                  dropItem.link && (
-                    <Link
-                      id={dropItem.id}
-                      to={dropItem.link}
-                      target={dropItem.external ? "_blank" : null}
-                      className="dropdownItem"
-                      key={dropkey}
-                      onClick={() => setClickedTitle("")}
-                    >
-                      {dropItem.name}
-                      <div className="dropdownItemText">{dropItem.text}</div>
-                    </Link>
-                  )
-                );
-              })
-                : null
-            }
+            <div className="dropdownRow">
+              {
+                clickedTitle !== "" && navbarSublists[clickedTitle].slice(0, 3).map((dropItem, idx) => {
+                  const dropkey = `drop_${idx}`;
+                  return (
+                    dropItem.link && (
+                      <Link
+                        id={dropItem.id}
+                        to={dropItem.link}
+                        target={dropItem.external ? "_blank" : null}
+                        className="dropdownItem"
+                        key={dropkey}
+                        onClick={() => setClickedTitle("")}
+                      >
+                        {dropItem.name}
+                        <div className="dropdownItemText">{dropItem.text}</div>
+                      </Link>
+                    )
+                  );
+                })
+              }
+            </div>
+            <div className="dropdownRow">
+              <div className="dropdownItem"></div>
+              {
+                clickedTitle !== "" && navbarSublists[clickedTitle].slice(3).map((dropItem, idx) => {
+                  const dropkey = `drop_${idx + 3}`;
+                  return (
+                    dropItem.link && (
+                      <Link
+                        id={dropItem.id}
+                        to={dropItem.link}
+                        target={dropItem.external ? "_blank" : null}
+                        className="dropdownItem"
+                        key={dropkey}
+                        onClick={() => setClickedTitle("")}
+                      >
+                        {dropItem.name}
+                        <div className="dropdownItemText">{dropItem.text}</div>
+                      </Link>
+                    )
+                  );
+                })
+              }
+            </div>
           </div>
         </DropdownContainer>
       </Dropdown>

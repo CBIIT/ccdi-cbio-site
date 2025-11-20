@@ -199,7 +199,6 @@ const DropdownContainer = styled.div`
   align-items: center;
   align-self: stretch;
   gap: 10px;
-  // grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
   .dropdownList {
     display: flex;
@@ -235,13 +234,6 @@ const DropdownContainer = styled.div`
   }
 
   .dropdownItemText {
-    // font-family: 'Poppins';
-    // font-weight: 600;
-    // font-style: normal;
-    // font-size: 20px;
-    // line-height: 110%;
-    // color: #FFFFFF;
-    // text-decoration: none;
     margin-top: 5px;
     font-family: 'Open Sans';
     font-style: normal;
@@ -433,6 +425,7 @@ const NavBar = () => {
               }
             </div>
             <div className="dropdownRow">
+              {/* For alignment purposes only */}
               <div className="dropdownItem"></div>
               {
                 clickedTitle !== "" && navbarSublists[clickedTitle].slice(3).map((dropItem, idx) => {

@@ -99,11 +99,19 @@ export const navbarSublists = {
       className: 'navMobileSubItem',
     },
     {
+      name: 'Using CCDI cBioPortal Data',
+      link: '/using-ccdi-cbioportal-data',
+      external: true,
+      // text: 'testText for subitem #2',
+      id: 'navbar-dropdown-item-navbar-subitem-4',
+      className: 'navMobileSubItem',
+    },
+    {
       name: 'cBio FAQ',
       link: 'https://docs.cbioportal.org/user-guide/faq/',
       external: true,
       // text: 'testText for subitem #4',
-      id: 'navbar-dropdown-item-navbar-subitem-4',
+      id: 'navbar-dropdown-item-navbar-subitem-5',
       className: 'navMobileSubItem',
     },
     // {

@@ -24,6 +24,7 @@ const OncoPrinter = Loader(lazy(() => import('./pages/OncoPrinter')));
 const MutationMapper = Loader(lazy(() => import('./pages/MutationMapper')));
 const ReleaseNotes = Loader(lazy(() => import('./pages/ReleaseNotes')));
 const About = Loader(lazy(() => import('./pages/About')));
+const DataUsing = Loader(lazy(() => import('./pages/DataUsing')));
 const Info = Loader(lazy(() => import('./pages/Info')));
 // const Login = Loader(lazy(() => import('./pages/Login')));
 
@@ -101,6 +102,10 @@ const routes: RouteObject[] = [
       {
         path: '/about-ccdi-cbioportal',
         element: <About />
+      },
+      {
+        path: '/using-ccdi-cbioportal-data',
+        element: <DataUsing />
       },
       {
         path: '/info',

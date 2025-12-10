@@ -69,7 +69,6 @@ export default function IframeBody({
         className={className}
         $height={height}
         $width={width}
-        allow="local-network-access"
         {...props}
       />
       {children}

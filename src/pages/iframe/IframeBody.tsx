@@ -60,6 +60,16 @@ export default function IframeBody({
   children,
   ...props
 }: IframeBodyProps) {
+  // Add local-network-access allow if the hostname includes -dev, -qa, or -stage
+  let isNonProd = false;
+  try {
+    const hostname = new URL(srcUrl, window.location.origin).hostname;
+    isNonProd = ['-dev', '-qa', '-stage'].some(env => hostname.includes(env));
+  } catch (e) {
+    // If srcUrl is not a valid URL, set isNonProd to false
+    isNonProd = false;
+  }
+
   return (
     <>
       <StyledIframe
@@ -69,7 +79,7 @@ export default function IframeBody({
         className={className}
         $height={height}
         $width={width}
-        allow="local-network-access"
+        allow={isNonProd ? "local-network-access" : undefined}
         {...props}
       />
       {children}

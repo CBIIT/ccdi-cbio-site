@@ -69,7 +69,7 @@ export default function IframeBody({
         className={className}
         $height={height}
         $width={width}
-        allow="local-network-access"
+        allow={srcUrl.includes('-dev') || srcUrl.includes('-qa') || srcUrl.includes('-stage') ? "local-network-access" : undefined}
         {...props}
       />
       {children}

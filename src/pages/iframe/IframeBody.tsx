@@ -60,6 +60,7 @@ export default function IframeBody({
   children,
   ...props
 }: IframeBodyProps) {
+  const isNotProd = ['-dev', '-qa', '-stage'].some(env => srcUrl.includes(env));
   return (
     <>
       <StyledIframe
@@ -69,7 +70,7 @@ export default function IframeBody({
         className={className}
         $height={height}
         $width={width}
-        allow={srcUrl.includes('-dev') || srcUrl.includes('-qa') || srcUrl.includes('-stage') ? "local-network-access" : undefined}
+        allow={isNotProd ? "local-network-access" : undefined}
         {...props}
       />
       {children}

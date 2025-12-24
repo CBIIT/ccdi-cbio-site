@@ -9,11 +9,11 @@ export const headerData = {
   globalHeaderLogo: Logo,
   globalHeaderLogoSmall: LogoSmall,
   globalHeaderLogoLink: '/',
-  globalHeaderLogoAltText: 'Portal Logo',
+  globalHeaderLogoAltText: 'NCI Childhood Cancer Data Initiative (CCDI) - cBioPortal | Childhood Cancer Genomics & Pediatric Oncology Data Platform Logo',
   globalHeaderSearchIcon: searchbarIcon,
   globalHeaderSearchIconAltText: 'search Icon',
   usaFlagSmall,
-  usaFlagSmallAltText: 'usaFlagSmall',
+  usaFlagSmallAltText: 'NCI Childhood Cancer Data Initiative (CCDI) - cBioPortal USA Flag',
 };
 
 export const navMobileList = [

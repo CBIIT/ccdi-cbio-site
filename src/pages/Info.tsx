@@ -105,7 +105,7 @@ const Info: FC = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '20px' }}>
-      <h1>NCI Childhood Cancer Data Initiative (CCDI) - cBioPortal's Version Information</h1>
+      <h1>Version Information</h1>
       <div>
         Frontend versions
         <ul>

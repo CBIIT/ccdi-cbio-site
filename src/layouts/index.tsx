@@ -32,12 +32,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
               paddingBottom: '46px',
             },
             '@media (min-width: 767px) and (max-width: 1023px)': {
-              paddingBottom: '36px',
+              paddingBottom: '40px',
               paddingLeft: 0,
               paddingRight: 0,
             },
             '@media (max-width: 767px)': {
-              paddingBottom: '36px',
+              paddingBottom: '40px',
               paddingLeft: 0,
               paddingRight: 0,
             },

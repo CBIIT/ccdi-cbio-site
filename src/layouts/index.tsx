@@ -5,6 +5,7 @@ import { Box, Container } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import OverlayWindow from '../components/OverlayWindow/OverlayWindow';
 import ScrollButton from '../components/ScrollButton/ScrollButtonView';
 import { DropdownContext } from '../store/navbar-dropdown-context';
 
@@ -18,9 +19,10 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <DropdownContext.Provider value={{ clickedTitle, setClickedTitle }}>
       <Helmet>
         <title>Childhood Cancer Data Initiative (CCDI) cBioPortal</title>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&family=Lato:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;900&family=Nunito:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;700&family=Lato:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;900&family=Nunito:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
       <Header />
+      <OverlayWindow />
       <main aria-label="CCDI CBIO Main Section">
         <Container
           maxWidth={false}

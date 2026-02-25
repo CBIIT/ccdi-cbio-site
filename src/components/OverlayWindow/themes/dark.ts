@@ -6,7 +6,7 @@ const curiousBlue = '#CBE2EE';
 const deepSkyBlue = '#8DCAFF';
 const airForceBlue = '#5E8CA5';
 const neonBlue = '#5D53F6';
-const qQhite = '#EEEEEE';
+const qWhite = '#EEEEEE';
 const orange = '#FF7F15';
 const green = '#2FA000';
 const dodgeBlue = '#0296C9';
@@ -35,7 +35,7 @@ export default {
     fontFamily: 'Lato,"Open Sans", sans-serif',
     fontFamilyRaleway: "'Raleway', sans-serif",
     drawerWidth: '240px',
-    widgetDivider: 'transparent',
+    widgetDivider: '#181918',
   },
   palette: {
     primary: {
@@ -91,7 +91,7 @@ export default {
     lochmara: {
       main: lochmara,
       light: tinycolor(lochmara)
-        .lighten(lochmara)
+        .lighten(lightenRate)
         .toHexString(),
       dark: tinycolor(lochmara)
         .darken(darkenRate)
@@ -102,10 +102,10 @@ export default {
     white: {
       main: white,
       light: tinycolor(white)
-        .lighten(white)
+        .lighten(lightenRate)
         .toHexString(),
       dark: tinycolor(white)
-        .darken(white)
+        .darken(darkenRate)
         .toHexString(),
       contrastText: 'white',
     },
@@ -114,17 +114,17 @@ export default {
       light: tinycolor(airForceBlue)
         .lighten(lightenRate)
         .toHexString(),
-      dark: tinycolor(whisper)
+      dark: tinycolor(airForceBlue)
         .darken(darkenRate)
         .toHexString(),
       contrastText: '#FFFFFF',
     },
-    qQhite: {
-      main: qQhite,
-      light: tinycolor(qQhite)
+    qWhite: {
+      main: qWhite,
+      light: tinycolor(qWhite)
         .lighten(lightenRate)
         .toHexString(),
-      dark: tinycolor(qQhite)
+      dark: tinycolor(qWhite)
         .darken(darkenRate)
         .toHexString(),
       contrastText: '#FFFFFF',
@@ -240,278 +240,315 @@ export default {
     widgetWide:
       '0px 12px 33px 0px #E8EAFC, 0 3px 3px -2px #B2B2B21A, 0 1px 8px 0 #9A9A9A1A',
   },
-  overrides: {
+  components: {
     MuiExpansionPanelDetails: {
-      root: {
-        padding: '0px',
+      styleOverrides: {
+        root: {
+          padding: '0px',
+        },
       },
     },
-    // MuiListItemText: {
-    //   root: {
-    //     padding: '0 8px',
-    //     '&:first-child': {
-    //       wordBreak: 'break-word',
-    //     },
-    //   },
-    // },
     MuiListItem: {
-      gutters: {
-        paddingTop: '4px',
-        paddingRight: '8px',
-        paddingBottom: '4px',
-        paddingLeft: '35px',
+      styleOverrides: {
+        gutters: {
+          paddingTop: '4px',
+          paddingRight: '8px',
+          paddingBottom: '4px',
+          paddingLeft: '35px',
+        },
       },
     },
     MuiExpansionPanelSummary: {
-      root: {
-        minHeight: '38px',
-        padding: '0 12px 0 35px',
-        '&.Mui-focused': {
-          backgroundColor: '#f4f4f4',
+      styleOverrides: {
+        root: {
+          minHeight: '38px',
+          padding: '0 12px 0 35px',
+          '&.Mui-focused': {
+            backgroundColor: '#f4f4f4',
+          },
         },
-      },
-      content: {
-        margin: '4px 0',
+        content: {
+          margin: '4px 0',
+        },
       },
     },
     MuiPaper: {
-      elevation4: {
-        boxShadow: 'none',
-      },
-      elevation2: {
-        boxShadow: 'none',
+      styleOverrides: {
+        elevation4: {
+          boxShadow: 'none',
+        },
+        elevation2: {
+          boxShadow: 'none',
+        },
       },
     },
     MUIDataTable: {
-      responsiveStacked: {
-        transform: 'rotateX(180deg)',
-      },
-      responsiveBase: {
-        transform: 'rotateX(180deg)',
-      },
-      tableRoot: {
-        transform: 'rotateX(180deg)',
-        borderTop: '3px solid #e7e5e5',
+      styleOverrides: {
+        responsiveStacked: {
+          transform: 'rotateX(180deg)',
+        },
+        responsiveBase: {
+          transform: 'rotateX(180deg)',
+        },
+        tableRoot: {
+          transform: 'rotateX(180deg)',
+          borderTop: '3px solid #e7e5e5',
+        },
       },
     },
     MUIDataTableSelectCell: {
-      fixedHeader: {
-        position: 'relative',
-      },
-      headerCell: {
-        borderBottom: '3px solid #42779A',
-        color: tableHeaderFontColor,
-        backgroundColor: tableHeader,
-
-      },
-      checkboxRoot: {
-        color: 'inherit',
-        '&$checked': {
-          color: '#8DCAFF',
+      styleOverrides: {
+        fixedHeader: {
+          position: 'relative',
+        },
+        headerCell: {
+          borderTop: '3px solid #42779A',
+          color: tableHeaderFontColor,
+          backgroundColor: tableHeader,
+  
+        },
+        checkboxRoot: {
+          color: 'inherit',
+          '&$checked': {
+            color: '#8DCAFF',
+          },
         },
       },
-
     },
     MuiBackdrop: {
-      root: {
-        backgroundColor: '#4A4A4A1A',
+      styleOverrides: {
+        root: {
+          backgroundColor: '#4A4A4A',
+        },
       },
     },
     MuiSelect: {
-      icon: {
-        color: '#B9B9B9',
+      styleOverrides: {
+        icon: {
+          color: '#B9B9B9',
+        },
       },
     },
     MuiTouchRipple: {
-      child: {
-        backgroundColor: 'white',
+      styleOverrides: {
+        child: {
+          backgroundColor: 'white',
+        },
       },
     },
     MUIDataTableHeadCell: {
-      fixedHeader: {
-        position: 'relative',
-        borderTop: tableHeaderBorder,
-        color: tableHeaderFontColor,
-        backgroundColor: tableHeader,
-        textDecoration: 'underline',
-        fontFamily: tableFontFamily,
-        letterSpacing: '0.06em',
-        fontStyle: 'normal',
-        fontSize: '11pt',
-        fontWeight: 'bold',
-        paddingLeft: '20px',
-        '&:first-child': {
-          paddingLeft: '30px',
+      styleOverrides: {
+        fixedHeader: {
+          position: 'relative',
+          borderTop: tableHeaderBorder,
+          color: tableHeaderFontColor,
+          backgroundColor: tableHeader,
+          textDecoration: 'underline',
+          fontFamily: tableFontFamily,
+          letterSpacing: '0.06em',
+          fontStyle: 'normal',
+          fontSize: '11pt',
+          fontWeight: 'bold',
+          paddingLeft: '20px',
+          '&:first-child': {
+            paddingLeft: '30px',
+          },
         },
-      },
-      sortActive: {
-        color: tableHeaderFontColor,
-      },
-      toolButton: {
-        cursor: 'pointer',
-        display: 'inline-flex',
-        outline: 'none',
-
+        sortActive: {
+          color: tableHeaderFontColor,
+        },
+        toolButton: {
+          cursor: 'pointer',
+          display: 'inline-flex',
+          outline: 'none',
+        },
       },
     },
     MuiTableSortLabel: {
-      active: {
-        color: '#ff8a00',
-      },
-      icon: {
-        marginTop: '12px',
+      styleOverrides: {
+        active: {
+          color: '#ff8a00',
+        },
+        icon: {
+          marginTop: '12px',
+        },
       },
     },
     MUIDataTableBodyRow: {
-      root: {
-        backgroundColor: 'transparent !important',
-        '&:nth-child(even)': {
-          color: '#004C73',
-        },
-        '&:nth-child(even) td': {
-          background: '#f5f5f5',
-        },
-        '&:nth-child(odd)': {
-          color: '#004C73 !important',
-          background: '#f3f3f3 !important',
-        },
-        '&:nth-child(odd) td': {
-          background: '#fff',
+      styleOverrides: {
+        root: {
+          backgroundColor: 'transparent !important',
+          '&:nth-child(even)': {
+            color: '#004C73',
+          },
+          '&:nth-child(even) td': {
+            background: '#f5f5f5',
+          },
+          '&:nth-child(odd)': {
+            color: '#004C73 !important',
+            background: '#f3f3f3 !important',
+          },
+          '&:nth-child(odd) td': {
+            background: '#fff',
+          },
         },
       },
     },
     MUIDataTableFooter: {
-      root: {
-        borderBottom: '3px solid #e7e5e5',
-        borderTop: '5px solid #e7e5e5',
+      styleOverrides: {
+        root: {
+          borderBottom: '3px solid #e7e5e5',
+          borderTop: '5px solid #e7e5e5',
+        },
       },
     },
     MuiTableRow: {
-      head: {
-        height: 40,
-        borderBottom: '3px solid #42779A',
-      },
-      root: {
-        height: 40,
+      styleOverrides: {
+        head: {
+          height: 40,
+          borderBottom: '3px solid #42779A',
+        },
+        root: {
+          height: 40,
+        },
       },
     },
     MuiTableCell: {
-      root: {
-        borderBottom: '0px',
-        padding: '5px',
-      },
-      paddingCheckbox: {
-        padding: '0px 5px',
-      },
-      body: {
-        color: 'inherit',
-        letterSpacing: '0.025em',
-        fontStyle: 'normal',
-        fontSize: '16px',
-        fontFamily: 'Nunito',
-        fontWeight: 'normal',
-        paddingLeft: '20px',
-      },
-      head: {
-        fontSize: '0.95rem',
-        paddingLeft: '8px',
+      styleOverrides: {
+        root: {
+          borderBottom: '0px',
+          padding: '5px',
+        },
+        paddingCheckbox: {
+          padding: '0px 5px',
+        },
+        body: {
+          color: 'inherit',
+          letterSpacing: '0.025em',
+          fontStyle: 'normal',
+          fontSize: '16px',
+          fontFamily: 'Nunito',
+          fontWeight: 'normal',
+          paddingLeft: '20px',
+        },
+        head: {
+          fontSize: '0.95rem',
+          paddingLeft: '8px',
+        },
       },
     },
     MUIDataTableToolbar: {
-      root: {
-        backgroundColor: tableHeader,
-      },
-      titleText: {
-
-        color: tableHeaderFontColor,
-        // fontSize: '25.2pt',
-        fontFamily: tableFontFamily,
-        letterSpacing: '0.025em',
-        fontStyle: 'normal',
+      styleOverrides: {
+        root: {
+          backgroundColor: tableHeader,
+          minHeight: '44px',
+        },
+        titleText: {
+          color: tableHeaderFontColor,
+          fontFamily: tableFontFamily,
+          letterSpacing: '0.025em',
+          fontStyle: 'normal',
+        },
       },
     },
-
     MUIDataTableToolbarSelect: {
-      root: {
-        backgroundColor: tableHeader,
-      },
-      titleText: {
-        color: tableHeaderFontColor,
-        fontSize: '25.2pt',
-        fontFamily: tableFontFamily,
-        letterSpacing: '0.025em',
-        fontStyle: 'normal',
-      },
-      iconButton: {
-        marginRight: '0.3%',
-        '@media (max-width: 2560px)': {
-          marginRight: '0.5%',
+      styleOverrides: {
+        root: {
+          backgroundColor: tableHeader,
         },
-        '@media (max-width: 2000px)': {
-          marginRight: '0.7%',
+        titleText: {
+          color: tableHeaderFontColor,
+          fontSize: '25.2pt',
+          fontFamily: tableFontFamily,
+          letterSpacing: '0.025em',
+          fontStyle: 'normal',
         },
-        '@media (max-width: 1600px)': {
-          marginRight: '0.9%',
-        },
-        '@media (max-width: 1300px)': {
-          marginRight: '1.1%',
-        },
-        '@media (max-width: 1024px)': {
-          marginRight: '1.3%',
+        iconButton: {
+          marginRight: '0.3%',
+          '@media (max-width: 2560px)': {
+            marginRight: '0.5%',
+          },
+          '@media (max-width: 2000px)': {
+            marginRight: '0.7%',
+          },
+          '@media (max-width: 1600px)': {
+            marginRight: '0.9%',
+          },
+          '@media (max-width: 1300px)': {
+            marginRight: '1.1%',
+          },
+          '@media (max-width: 1024px)': {
+            marginRight: '1.3%',
+          },
         },
       },
     },
     MuiIconButton: {
-      root: {
-        padding: '5px',
+      styleOverrides: {
+        root: {
+          padding: '5px',
+        },
       },
     },
     MuiTablePagination: {
-      toolbar: {
-        textTransform: 'uppercase',
-        marginTop: '-11px',
-      },
-      select: {
-        border: '2px #fff solid',
-        background: '#fff',
-      },
-      caption: {
-        color: '#000000',
-        fontFamily: 'Open Sans',
-        fontSize: '10px',
-      },
-      actions: {
-        marginRight: '39px',
+      styleOverrides: {
+        toolbar: {
+          textTransform: 'uppercase',
+          marginTop: '-11px',
+          paddingTop: '11px',
+        },
+        select: {
+          border: '2px #fff solid',
+          background: '#fff',
+        },
+        caption: {
+          color: '#000000',
+          fontFamily: 'Open Sans',
+          fontSize: '10px',
+        },
+        actions: {
+          marginRight: '39px',
+        },
       },
     },
     MuiSwitch: {
-      bar: {
-        backgroundColor: '#ABADB0',
+      styleOverrides: {
+        bar: {
+          backgroundColor: '#ABADB0',
+        },
       },
     },
     MuiTableFooter: {
-      root: {
-        borderTop: '6px #E7E5E5 solid',
+      styleOverrides: {
+        root: {
+          borderTop: '6px #E7E5E5 solid',
+        },
       },
     },
     MUIDataTableBodyCell: {
-      stackedParent: {
-        '&:first-child': {
-          paddingLeft: '30px',
+      styleOverrides: {
+        stackedParent: {
+          '&:first-child': {
+            paddingLeft: '30px',
+          },
         },
       },
     },
     MuiExpansionPanel: {
-      root: {
-        '&$expanded': {
-          margin: 'unset',
+      styleOverrides: {
+        root: {
+          '&$expanded': {
+            margin: 'unset',
+          },
         },
       },
     },
     MuiCheckbox: {
-      colorSecondary: {
-        '&:first-child': {
-          color: '#000000',
+      styleOverrides: {
+        colorSecondary: {
+          '&:first-child': {
+            color: '#000000',
+          },
         },
       },
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import themes, { overrides } from './themes';
+import themes, { typography } from './themes';
 
 // MUI v5 uses components.*.styleOverrides, not overrides.Mui*.root
 const overlayComponents = {
@@ -66,7 +66,6 @@ const overlayComponents = {
   MuiList: {
     styleOverrides: {
       root: {
-        // marginTop: '-15px !important',
         fontSize: '14px',
       },
       padding: {
@@ -86,7 +85,7 @@ const overlayComponents = {
     styleOverrides: {
       root: {
         padding: '0 8px',
-        '&:first-child': {
+        '&:first-of-type': {
           wordBreak: 'break-word',
         },
       },
@@ -133,12 +132,14 @@ const overlayComponents = {
   },
 };
 
-export default ({
+export default function OverlayThemeConfig({
   children,
-}) => {
+}: {
+  children: React.ReactNode;
+}) {
   const computedTheme = createTheme({
     ...themes.light,
-    ...overrides,
+    ...typography,
     components: overlayComponents,
   });
 
@@ -147,4 +148,4 @@ export default ({
       {children}
     </ThemeProvider>
   );
-};
+}

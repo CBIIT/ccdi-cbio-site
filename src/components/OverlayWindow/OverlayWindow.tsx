@@ -21,7 +21,6 @@ const OVERLAY_LOAD_SESSION_STORAGE = "overlayLoad";
 const OverlayWindow = () => {
   const [open, setOpen] = useState(false);
   
-
   const handleClose = () => {
     setOpen(false);
     sessionStorage.setItem(OVERLAY_LOAD_SESSION_STORAGE, "true");
@@ -34,7 +33,7 @@ const OverlayWindow = () => {
   }, []);
 
   const content = text.content.map((item, index) => (
-    <DialogContentText id="alert-dialog-description" key={`dialog-content-${index}`}>
+    <DialogContentText id={`alert-dialog-description-${index}`} key={`dialog-content-${index}`}>
       {item}
     </DialogContentText>
   ));
@@ -50,36 +49,33 @@ const OverlayWindow = () => {
   ));
 
   return (
-    <>
-      <div>
-        <DialogThemeProvider>
-          <Dialog
-            open={open}
-            aria-labelledby="alert-dialog-title"
-            aria-describedby="alert-dialog-description"
-            maxWidth="md"
-          >
-            <DialogTitle id="alert-dialog-title">
-              Warning
-            </DialogTitle>
-            <Divider />
-            <DialogContent>
-              {content}
-              <span>{' By using this system, you understand and consent to the following: '}</span>
-              <List>
-                {list}
-              </List>
-            </DialogContent>
-            <Divider />
-            <DialogActions>
-              <Button onClick={handleClose}>
-                Continue
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </DialogThemeProvider>
-      </div>
-    </>
+    <DialogThemeProvider>
+      <Dialog
+        open={open}
+        disableEscapeKeyDown={true}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+        maxWidth="md"
+      >
+        <DialogTitle id="alert-dialog-title">
+          Warning
+        </DialogTitle>
+        <Divider />
+        <DialogContent>
+          {content}
+          <span>{' By using this system, you understand and consent to the following: '}</span>
+          <List>
+            {list}
+          </List>
+        </DialogContent>
+        <Divider />
+        <DialogActions>
+          <Button onClick={handleClose}>
+            Continue
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </DialogThemeProvider>
   );
 };
 

@@ -10,7 +10,7 @@ const qWhite = '#EEEEEE';
 const orange = '#FF7F15';
 const green = '#2FA000';
 const dodgeBlue = '#0296C9';
-const cobolt = '#FBB35D';
+const cobalt = '#FBB35D';
 const warning = '#ff7f0b';
 const success = '#3CD4A0';
 const info = '#3f2b2f';
@@ -31,7 +31,7 @@ export default {
     bodyBackGround: '#E5F0FA',
     cardBackGround: '#f0f6f8',
     fontFamilySans: '"Open Sans", sans-serif',
-    footorBackground: '#325068',
+    footerBackground: '#325068',
     fontFamily: 'Lato,"Open Sans", sans-serif',
     fontFamilyRaleway: "'Raleway', sans-serif",
     drawerWidth: '240px',
@@ -159,12 +159,12 @@ export default {
         .toHexString(),
       contrastText: '#FFFFFF',
     },
-    cobolt: {
-      main: cobolt,
-      light: tinycolor(cobolt)
+    cobalt: {
+      main: cobalt,
+      light: tinycolor(cobalt)
         .lighten(lightenRate)
         .toHexString(),
-      dark: tinycolor(cobolt)
+      dark: tinycolor(cobalt)
         .darken(darkenRate)
         .toHexString(),
       contrastText: '#FFFFFF',
@@ -178,7 +178,7 @@ export default {
         .darken(darkenRate)
         .toHexString(),
       contrastText: '#CBCACA',
-      contrastSwicthColor: '#60479D',
+      contrastSwitchColor: '#60479D',
     },
     warning: {
       main: warning,

@@ -8,6 +8,9 @@ export default {
 
 export const typography = {
   fontFamily: "'Lato Regular','Open Sans', 'sans-serif'",
+};
+
+export const typographyOverrides = {
   h1: {
     fontSize: '3rem',
   },

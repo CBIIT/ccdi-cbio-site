@@ -70,10 +70,10 @@ export default {
     },
     neonBlue: {
       main: neonBlue,
-      light: tinycolor(curiousBlue)
+      light: tinycolor(neonBlue)
         .lighten(lightenRate)
         .toHexString(),
-      dark: tinycolor(curiousBlue)
+      dark: tinycolor(neonBlue)
         .darken(darkenRate)
         .toHexString(),
       contrastText: '#FFFFFF',
@@ -114,7 +114,7 @@ export default {
       light: tinycolor(airForceBlue)
         .lighten(lightenRate)
         .toHexString(),
-      dark: tinycolor(whisper)
+      dark: tinycolor(airForceBlue)
         .darken(darkenRate)
         .toHexString(),
       contrastText: '#FFFFFF',
@@ -493,7 +493,7 @@ export default {
     MuiTablePagination: {
       styleOverrides: {
         toolbar: {
-          textTransform: 'uppercase',
+          textTransform: 'uppercase' as const,
           marginTop: '-11px',
           paddingTop: '11px',
         },
@@ -513,7 +513,7 @@ export default {
     },
     MuiSwitch: {
       styleOverrides: {
-        bar: {
+        track: {
           backgroundColor: '#ABADB0',
         },
       },

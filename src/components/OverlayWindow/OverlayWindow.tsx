@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -19,18 +19,12 @@ import DialogThemeProvider from './OverlayThemeConfig';
 const OVERLAY_LOAD_SESSION_STORAGE = "overlayLoad";
 
 const OverlayWindow = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(!sessionStorage.getItem(OVERLAY_LOAD_SESSION_STORAGE));
   
   const handleClose = () => {
     setOpen(false);
     sessionStorage.setItem(OVERLAY_LOAD_SESSION_STORAGE, "true");
   };
-
-  useEffect(() => {
-    if (!sessionStorage.getItem(OVERLAY_LOAD_SESSION_STORAGE)) {
-      setOpen(true);
-    }
-  }, []);
 
   const content = text.content.map((item, index) => (
     <DialogContentText id={`alert-dialog-description-${index}`} key={`dialog-content-${index}`}>
@@ -54,14 +48,13 @@ const OverlayWindow = () => {
         open={open}
         disableEscapeKeyDown={true}
         aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
         maxWidth="md"
       >
         <DialogTitle id="alert-dialog-title">
           Warning
         </DialogTitle>
         <Divider />
-        <DialogContent>
+        <DialogContent tabIndex={0}>
           {content}
           <span>{' By using this system, you understand and consent to the following: '}</span>
           <List>

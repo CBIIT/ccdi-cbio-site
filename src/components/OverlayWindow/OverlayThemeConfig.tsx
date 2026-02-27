@@ -1,8 +1,7 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import themes, { typography } from './themes';
+import themes, { typographyOverrides } from './themes';
 
-// MUI v5 uses components.*.styleOverrides, not overrides.Mui*.root
 const overlayComponents = {
   MuiDialog: {
     styleOverrides: {
@@ -132,19 +131,19 @@ const overlayComponents = {
   },
 };
 
+const overlayTheme = createTheme({
+  ...themes.light,
+  typography: typographyOverrides,
+  components: overlayComponents,
+});
+
 export default function OverlayThemeConfig({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const computedTheme = createTheme({
-    ...themes.light,
-    ...typography,
-    components: overlayComponents,
-  });
-
   return (
-    <ThemeProvider theme={computedTheme}>
+    <ThemeProvider theme={overlayTheme}>
       {children}
     </ThemeProvider>
   );

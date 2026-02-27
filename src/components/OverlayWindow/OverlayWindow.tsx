@@ -38,6 +38,7 @@ const OverlayWindow = () => {
       }
     } catch (error) {
       console.error('Error getting session storage:', error);
+      setOpen(true);
     }
   }, [setOpen]);
 

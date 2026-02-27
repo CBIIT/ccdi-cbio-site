@@ -241,7 +241,7 @@ export default {
       '0px 12px 33px 0px #E8EAFC, 0 3px 3px -2px #B2B2B21A, 0 1px 8px 0 #9A9A9A1A',
   },
   components: {
-    MuiExpansionPanelDetails: {
+    MuiAccordionDetails: {
       styleOverrides: {
         root: {
           padding: '0px',
@@ -258,7 +258,7 @@ export default {
         },
       },
     },
-    MuiExpansionPanelSummary: {
+    MuiAccordionSummary: {
       styleOverrides: {
         root: {
           minHeight: '38px',
@@ -534,7 +534,7 @@ export default {
         },
       },
     },
-    MuiExpansionPanel: {
+    MuiAccordion: {
       styleOverrides: {
         root: {
           '&$expanded': {

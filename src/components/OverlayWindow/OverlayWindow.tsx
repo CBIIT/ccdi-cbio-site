@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -19,12 +19,27 @@ import DialogThemeProvider from './OverlayThemeConfig';
 const OVERLAY_LOAD_SESSION_STORAGE = "overlayLoad";
 
 const OverlayWindow = () => {
-  const [open, setOpen] = useState(!sessionStorage.getItem(OVERLAY_LOAD_SESSION_STORAGE));
+  const [open, setOpen] = useState(false);
   
   const handleClose = () => {
     setOpen(false);
-    sessionStorage.setItem(OVERLAY_LOAD_SESSION_STORAGE, "true");
+    try {
+      sessionStorage.setItem(OVERLAY_LOAD_SESSION_STORAGE, "true");
+    } catch (error) {
+      console.error('Error setting session storage:', error);
+    }
   };
+
+  useEffect(() => {
+    try {
+      const isOverlayLoaded = sessionStorage.getItem(OVERLAY_LOAD_SESSION_STORAGE);
+      if (!isOverlayLoaded) {
+        setOpen(true);
+      }
+    } catch (error) {
+      console.error('Error getting session storage:', error);
+    }
+  }, [setOpen]);
 
   const content = text.content.map((item, index) => (
     <DialogContentText id={`alert-dialog-description-${index}`} key={`dialog-content-${index}`}>
@@ -36,9 +51,7 @@ const OverlayWindow = () => {
       <ListItemIcon>
         <FiberManualRecord style={{ fontSize: 8 }} />
       </ListItemIcon>
-      <ListItemText>
-        {item}
-      </ListItemText>
+      <ListItemText primary={item} />
     </ListItem>
   ));
 
@@ -48,6 +61,7 @@ const OverlayWindow = () => {
         open={open}
         disableEscapeKeyDown={true}
         aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description-0"
         maxWidth="md"
       >
         <DialogTitle id="alert-dialog-title">

@@ -107,7 +107,7 @@ const overlayComponents = {
       root: {
         color: '#000000',
         marginBottom: '10px',
-        '& p.lastChild': {
+        '&:lastChild': {
           marginBottom: '0px',
         },
       },
@@ -124,15 +124,17 @@ const overlayComponents = {
     styleOverrides: {
       root: {
         height: '75px',
-        justifyContent: 'right !important',
+        justifyContent: 'flex-end',
         padding: '30px 10px 25px 0px !important',
       },
     },
   },
 };
 
+const { components: themeLightComponents, ...themeLightRest } = themes.light;
+
 const overlayTheme = createTheme({
-  ...themes.light,
+  ...themeLightRest,
   typography: typographyOverrides,
   components: overlayComponents,
 });

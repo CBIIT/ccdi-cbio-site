@@ -40,7 +40,7 @@ const OverlayWindow = () => {
       console.error('Error getting session storage:', error);
       setOpen(true);
     }
-  }, [setOpen]);
+  }, []);
 
   const content = text.content.map((item, index) => (
     <DialogContentText id={`alert-dialog-description-${index}`} key={`dialog-content-${index}`}>

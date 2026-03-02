@@ -43,7 +43,7 @@ const OverlayWindow = () => {
   }, []);
 
   const content = text.content.map((item, index) => (
-    <DialogContentText id={`alert-dialog-description-${index}`} key={`dialog-content-${index}`}>
+    <DialogContentText key={`dialog-content-${index}`}>
       {item}
     </DialogContentText>
   ));
@@ -62,14 +62,14 @@ const OverlayWindow = () => {
         open={open}
         disableEscapeKeyDown={true}
         aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description-0"
+        aria-describedby="alert-dialog-description"
         maxWidth="md"
       >
         <DialogTitle id="alert-dialog-title">
           Warning
         </DialogTitle>
         <Divider />
-        <DialogContent tabIndex={0}>
+        <DialogContent id="alert-dialog-description" tabIndex={0}>
           {content}
           <span>{' By using this system, you understand and consent to the following: '}</span>
           <List>

@@ -5,7 +5,7 @@ export default {
 };
 
 export const typography = {
-  fontFamily: "'Lato Regular','Open Sans', 'sans-serif'",
+  fontFamily: "'Lato Regular','Open Sans', sans-serif",
 };
 
 export const typographyOverrides = {

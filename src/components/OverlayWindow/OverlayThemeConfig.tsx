@@ -131,10 +131,10 @@ const overlayComponents = {
   },
 };
 
-const { components: themeLightComponents, ...themeLightRest } = themes.light;
+const { palette: themeLightPalette } = themes.light;
 
 const overlayTheme = createTheme({
-  ...themeLightRest,
+  palette: themeLightPalette,
   typography: typographyOverrides,
   components: overlayComponents,
 });

@@ -16,7 +16,7 @@ import FiberManualRecord from '@mui/icons-material/FiberManualRecord';
 import text from './OverlayText.json';
 import DialogThemeProvider from './OverlayThemeConfig';
 
-const OVERLAY_LOAD_SESSION_STORAGE = "overlayLoad";
+const OVERLAY_LOAD_SESSION_STORAGE = 'overlayLoad';
 
 const OverlayWindow = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +24,7 @@ const OverlayWindow = () => {
   const handleClose = () => {
     setOpen(false);
     try {
-      sessionStorage.setItem(OVERLAY_LOAD_SESSION_STORAGE, "true");
+      sessionStorage.setItem(OVERLAY_LOAD_SESSION_STORAGE, 'true');
     } catch (error) {
       console.error('Error setting session storage:', error);
     }

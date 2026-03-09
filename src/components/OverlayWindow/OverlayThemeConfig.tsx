@@ -33,6 +33,7 @@ const overlayComponents = {
   MuiDialogContent: {
     styleOverrides: {
       root: {
+        lineHeight: '1.15',
         color: '#000045',
         '& p': {
           fontSize: '14px',
@@ -65,6 +66,7 @@ const overlayComponents = {
   MuiList: {
     styleOverrides: {
       root: {
+        marginTop: '1.5px !important',
         fontSize: '14px',
       },
       padding: {

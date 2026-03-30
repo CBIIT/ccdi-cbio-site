@@ -16,7 +16,7 @@ import FiberManualRecord from '@mui/icons-material/FiberManualRecord';
 import text from './OverlayText.json';
 import DialogThemeProvider from './OverlayThemeConfig';
 
-const OVERLAY_LOAD_SESSION_STORAGE = 'overlayLoad';
+const OVERLAY_LOAD_LOCAL_STORAGE = 'overlayLoad';
 
 const OverlayWindow = () => {
   const [open, setOpen] = useState(false);
@@ -24,20 +24,20 @@ const OverlayWindow = () => {
   const handleClose = () => {
     setOpen(false);
     try {
-      sessionStorage.setItem(OVERLAY_LOAD_SESSION_STORAGE, 'true');
+      localStorage.setItem(OVERLAY_LOAD_LOCAL_STORAGE, 'true');
     } catch (error) {
-      console.error('Error setting session storage:', error);
+      console.error('Error setting local storage:', error);
     }
   };
 
   useEffect(() => {
     try {
-      const isOverlayLoaded = sessionStorage.getItem(OVERLAY_LOAD_SESSION_STORAGE);
+      const isOverlayLoaded = localStorage.getItem(OVERLAY_LOAD_LOCAL_STORAGE);
       if (!isOverlayLoaded) {
         setOpen(true);
       }
     } catch (error) {
-      console.error('Error getting session storage:', error);
+      console.error('Error getting local storage:', error);
       setOpen(true);
     }
   }, []);

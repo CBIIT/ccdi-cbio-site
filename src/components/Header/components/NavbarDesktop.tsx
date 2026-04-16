@@ -1,46 +1,47 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { navMobileList, navbarSublists } from '../../../config/globalHeaderData';
+import { DropdownContext } from '../../../store/navbar-dropdown-context';
 
 const Nav = styled.div`
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    box-shadow: -0.1px 6px 9px -6px rgba(0, 0, 0, 0.5);
-    z-index: 1100;
-    position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: -0.1px 6px 9px -6px rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  position: relative;
 
-    .dropdownContainer {
-      // outline: none;
-      // visibility: hidden;
-      // opacity: 0;
-      margin: 0 auto;
-      position: relative;
-      width: 1400px;
-    }
-    .invisible {
-      visibility: hidden;
-    }
- `;
+  .dropdownContainer {
+    // outline: none;
+    // visibility: hidden;
+    // opacity: 0;
+    margin: 0 auto;
+    position: relative;
+    width: 1400px;
+  }
+
+  .invisible {
+    visibility: hidden;
+  }
+`;
 
 const NavContainer = styled.div`
-    margin: 0 auto;
-    max-width: 1400px;
-    text-align: left;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
+  margin: 0 auto;
+  max-width: 1400px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
 `;
 
 const UlContainer = styled.ul`
   list-style: none;
   margin: 0;
-  padding-top: 17px;
-  padding-left: 11px;
+  padding: 1rem 0 0 0.75rem;
 `;
 
 const LiSection = styled.li`
@@ -65,8 +66,8 @@ const LiSection = styled.li`
     line-height: 40px;
     letter-spacing: normal;
     text-decoration: none;
-    margin: 0 45px 0 5px;
-    padding: 0 15px;
+    // margin: 0 45px 0 5px;
+    padding: 0 1rem;
     user-select:none;
     border-top: 4px solid transparent;
     border-left: 4px solid transparent;
@@ -113,7 +114,7 @@ const LiSection = styled.li`
 
   .clicked {
     color: #FFFFFF;
-    background: #1F4671;
+    background: #004971;
   }
 
   .clicked::after {
@@ -125,7 +126,7 @@ const LiSection = styled.li`
   }
 
   .clicked:hover {
-    border-bottom: 4px solid #1F4671;
+    border-bottom: 4px solid #004971;
     color: #FFFFFF;
 
     ::after {
@@ -152,9 +153,11 @@ const LiSection = styled.li`
       display: none;
     }
   }
+
   .shouldBeUnderlined {
     border-bottom: 4px solid #3A75BD;
   }
+
   .navTitleClicked {
     display: block;
     color: #FFFFFF;
@@ -164,10 +167,10 @@ const LiSection = styled.li`
     line-height: 40px;
     letter-spacing: normal;
     text-decoration: none;
-    margin: 0 45px 0 5px;
-    padding: 0 15px;
+    // margin: 0 45px 0 5px;
+    padding: 0 1rem;
     user-select:none;
-    background: #1F4671;
+    background: #004971;
     border-top: 4px solid #5786FF;
     border-left: 4px solid #5786FF;
     border-right: 4px solid #5786FF;
@@ -175,40 +178,55 @@ const LiSection = styled.li`
 `;
 
 const Dropdown = styled.div`
-    top: 60.5px;
-    left: 0;
-    width: 100%;
-    background: #1F4671;
-    z-index: 1100;
-    position: absolute;
-    // visibility: hidden;
-    // outline: none;
-    // opacity: 0;
+  top: 60.5px;
+  left: 0;
+  width: 100%;
+  background: #004971;
+  z-index: 1100;
+  position: absolute;
+  // visibility: hidden;
+  // outline: none;
+  // opacity: 0;
 `;
 
 const DropdownContainer = styled.div`
-    margin: 0 auto;
-    text-align: left;
-    position: relative;
-    max-width: 1400px;
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 20px 0 40px 0;
+  background: #004971;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  gap: 10px;
 
-    .dropdownList {
-      background: #1F4671;
-      display: grid;
-      grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-      padding: 32px 32px 0 32px;
-    }
+  .dropdownList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    gap: 50px;
+    padding: 15px 32px 15px 2rem;
+  }
 
-    .dropdownItem {
-      padding: 0 10px 52px 10px;
-      text-align: left;
-      font-family: 'Poppins';
-      font-weight: 600;
-      font-style: normal;
-      font-size: 20px;
-      line-height: 110%;
-      color: #FFFFFF;
-      text-decoration: none;
+  .dropdownRow {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+  }
+
+  .dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 110%;
+    color: #FFFFFF;
+    text-decoration: none;
   }
 
   .dropdownItem:hover {
@@ -244,9 +262,12 @@ const StyledLoginLink = styled(Link)`
 const useOutsideAlerter = (ref) => {
   useEffect(() => {
     function handleClickOutside(event) {
-      if (!event.target || (event.target.getAttribute("class") !== "dropdownList" && ref.current && !ref.current.contains(event.target))) {
+      if (
+        !event.target ||
+        (event.target.getAttribute("class") !== "dropdownList" && ref.current && !ref.current.contains(event.target))
+      ) {
         const toggle = document.getElementsByClassName("navText clicked");
-        if (toggle[0] && event.target.getAttribute("class") !== "navText clicked" && event.target.getAttribute("class") !== "navText clicked") {
+        if (toggle[0] && !event.target.getAttribute("class")?.includes("navText clicked")) {
           const temp: HTMLElement = toggle[0] as HTMLElement;
           temp.click();
         }
@@ -261,14 +282,16 @@ const useOutsideAlerter = (ref) => {
 };
 
 const NavBar = () => {
-  const [clickedTitle, setClickedTitle] = useState("");
+  const { clickedTitle, setClickedTitle } = useContext(DropdownContext);
   const dropdownSelection = useRef(null);
+  // Exclude Login from Navbar
+  // const filteredNavMobileList = navMobileList.filter((item) => !item.notExistInNav);
   const clickableObject = navMobileList.filter((item) => item.className === 'navMobileItem clickable');
   const clickableTitle = clickableObject.map((item) => item.name);
   useOutsideAlerter(dropdownSelection);
 
   const handleMenuClick = (e) => {
-    if (e.target.innerText === clickedTitle || !clickableTitle.includes(e.target.innerText)) {
+    if (e.target.innerText === clickedTitle || !clickableTitle?.includes(e.target.innerText)) {
       setClickedTitle("");
     } else {
       setClickedTitle(e.target.innerText);
@@ -278,8 +301,11 @@ const NavBar = () => {
   const onKeyPressHandler = (e) => {
     if (e.key === "Enter") {
       handleMenuClick(e);
+    } else if (e.key === 'Escape') {
+      setClickedTitle("");
     }
   };
+
   type NavSubLinkData = {
     name: string;
     link: string;
@@ -315,18 +341,37 @@ const NavBar = () => {
                   ? (
                     <LiSection key={navkey}>
                       <div className="navTitle directLink">
-                        <NavLink to={navMobileItem.link}>
-                          <div
-                            id={navMobileItem.id}
-                            onKeyDown={onKeyPressHandler}
-                            role="button"
-                            tabIndex={0}
-                            className={`navText directLink ${shouldBeUnderlined(navMobileItem) ? "shouldBeUnderlined" : ""}`}
-                            onClick={handleMenuClick}
-                          >
-                            {navMobileItem.name}
-                          </div>
-                        </NavLink>
+                        {
+                          navMobileItem.id === 'navbar-link-home'
+                            ? (
+                                <a href={navMobileItem.link} target={navMobileItem.external ? "_blank" : null} rel={navMobileItem.external ? "noopener noreferrer" : null}>
+                                  <div
+                                    id={navMobileItem.id}
+                                    onKeyDown={onKeyPressHandler}
+                                    role="button"
+                                    tabIndex={0}
+                                    className={`navText directLink ${shouldBeUnderlined(navMobileItem) ? "shouldBeUnderlined" : ""}`}
+                                    onClick={handleMenuClick}
+                                  >
+                                    {navMobileItem.name}
+                                  </div>
+                                </a>
+                            )
+                            : (
+                                <NavLink to={navMobileItem.link} target={navMobileItem.external ? "_blank" : null}>
+                                  <div
+                                    id={navMobileItem.id}
+                                    onKeyDown={onKeyPressHandler}
+                                    role="button"
+                                    tabIndex={0}
+                                    className={`navText directLink ${shouldBeUnderlined(navMobileItem) ? "shouldBeUnderlined" : ""}`}
+                                    onClick={handleMenuClick}
+                                  >
+                                    {navMobileItem.name}
+                                  </div>
+                                </NavLink>
+                            )
+                        }
                       </div>
                     </LiSection>
                   )
@@ -350,27 +395,59 @@ const NavBar = () => {
             })
           }
         </UlContainer>
-        <StyledLoginLink id="header-navbar-login-button" to="/login">
+        {/* <StyledLoginLink id="header-navbar-login-button" to="/login">
           Login
-        </StyledLoginLink>
+        </StyledLoginLink> */}
       </NavContainer>
-      <Dropdown ref={dropdownSelection} className={clickedTitle === ''  ? "invisible" : ""}>
+      <Dropdown ref={dropdownSelection} className={clickedTitle === '' ? "invisible" : ""}>
         <DropdownContainer>
           <div className="dropdownList">
-            {
-              clickedTitle !== "" ? navbarSublists[clickedTitle].map((dropItem, idx) => {
-                const dropkey = `drop_${idx}`;
-                return (
-                  dropItem.link && (
-                    <Link id={dropItem.id} to={dropItem.link} className="dropdownItem" key={dropkey} onClick={() => setClickedTitle("")}>
-                      {dropItem.name}
-                      <div className="dropdownItemText">{dropItem.text}</div>
-                    </Link>
-                  )
-                );
-              })
-                : null
-            }
+            <div className="dropdownRow">
+              {
+                clickedTitle !== "" && navbarSublists[clickedTitle].slice(0, 3).map((dropItem, idx) => {
+                  const dropkey = `drop_${idx}`;
+                  return (
+                    dropItem.link && (
+                      <Link
+                        id={dropItem.id}
+                        to={dropItem.link}
+                        target={dropItem.external ? "_blank" : null}
+                        className="dropdownItem"
+                        key={dropkey}
+                        onClick={() => setClickedTitle("")}
+                      >
+                        {dropItem.name}
+                        <div className="dropdownItemText">{dropItem.text}</div>
+                      </Link>
+                    )
+                  );
+                })
+              }
+            </div>
+            <div className="dropdownRow">
+              {/* For alignment purposes only */}
+              <div className="dropdownItem"></div>
+              {
+                clickedTitle !== "" && navbarSublists[clickedTitle].slice(3).map((dropItem, idx) => {
+                  const dropkey = `drop_${idx + 3}`;
+                  return (
+                    dropItem.link && (
+                      <Link
+                        id={dropItem.id}
+                        to={dropItem.link}
+                        target={dropItem.external ? "_blank" : null}
+                        className="dropdownItem"
+                        key={dropkey}
+                        onClick={() => setClickedTitle("")}
+                      >
+                        {dropItem.name}
+                        <div className="dropdownItemText">{dropItem.text}</div>
+                      </Link>
+                    )
+                  );
+                })
+              }
+            </div>
           </div>
         </DropdownContainer>
       </Dropdown>

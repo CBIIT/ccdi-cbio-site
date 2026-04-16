@@ -19,25 +19,30 @@ export default {
       title: 'About',
       items: [
         {
+          text: 'About CCDI cBioPortal',
+          link: '/about-ccdi-cbioportal',
+        },
+        {
           text: 'About CCDI Hub',
-          link: '/about',
+          link: 'https://ccdi.cancer.gov/about',
         },
         {
           text: 'About CCDI',
           link: 'https://www.cancer.gov/research/areas/childhood/childhood-cancer-data-initiative',
         },
         {
-          text: 'Contact CCDI Hub',
+          text: 'About cBioPortal',
+          link: 'https://docs.cbioportal.org/about-us/',
+        },
+        {
+          text: 'Contact Us',
           link: 'mailto:NCIChildhoodCancerDataInitiative@mail.nih.gov',
         },
       ],
-    }, {
+    },
+    {
       title: 'Resources',
       items: [
-        {
-          text: 'Contact Us',
-          link: 'https://www.cancer.gov/contact',
-        },
         {
           text: 'Publications',
           link: 'https://www.cancer.gov/publications',
@@ -80,9 +85,9 @@ export default {
   ],
   followUs_links: [
     {
-      img: instagramIcon,
-      link: 'https://www.instagram.com/nationalcancerinstitute/',
-      description: 'instagramIcon',
+      img: facebookIcon,
+      link: 'https://www.facebook.com/cancer.gov',
+      description: 'facebookIcon',
     },
     {
       img: twitterIcon,
@@ -90,40 +95,25 @@ export default {
       description: 'twitterIcon',
     },
     {
-      img: facebookIcon,
-      link: 'https://www.facebook.com/cancer.gov',
-      description: 'facebookIcon',
-
+      img: instagramIcon,
+      link: 'https://www.instagram.com/nationalcancerinstitute/',
+      description: 'instagramIcon',
     },
     {
       img: youtubeIcon,
       link: 'https://www.youtube.com/NCIgov',
       description: 'youtubeIcon',
-
     },
     {
       img: linkedInIcon,
       link: 'https://www.linkedin.com/company/nationalcancerinstitute/',
       description: 'linkedInIcon',
-
     }
   ],
   contact_links: [
     {
-      text: 'Live chat',
-      link: 'https://livehelp.cancer.gov/',
-    },
-    {
-      text: '1-800-4-CANCER',
-      link: 'tel:+18004226237',
-    },
-    {
-      text: 'cdshelpdesk@mail.nih.gov',
-      link: 'mailto:+cdshelpdesk@mail.nih.gov',
-    },
-    {
-      text: 'Site Feedback',
-      link: 'https://nci.az1.qualtrics.com/jfe/form/SV_aeLLobt6ZeGVn5I',
+      text: 'NCIChildhoodCancerDataInitiative@mail.nih.gov',
+      link: 'mailto:NCIChildhoodCancerDataInitiative@mail.nih.gov',
     },
   ],
   global_footer_links: [

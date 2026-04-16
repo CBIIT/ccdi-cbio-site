@@ -18,7 +18,7 @@ const HeaderContainer = styled.div`
     }
   }
 
-  @media (min-width:768px) and (max-width: 1024px) {
+  @media (min-width:768px) and (max-width: 1023px) {
     .desktop {
       display: none;
     }
@@ -30,7 +30,7 @@ const HeaderContainer = styled.div`
     }
   }
 
-  @media  (max-width: 768px) {
+  @media  (max-width: 767px) {
     .desktop {
       display: none;
     }
@@ -56,6 +56,6 @@ const Header = () => (
       <HeaderMobile />
     </div>
   </HeaderContainer>
-  );
+);
 
 export default Header;

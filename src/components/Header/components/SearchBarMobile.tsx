@@ -9,7 +9,7 @@ const SearchBarContainer = styled.div`
 
     .searchBar {
       margin-left: auto;
-      width: 303px;
+      width: 100%;
       height: 43px;
       border: 1px solid #71767A;
     }
@@ -32,11 +32,11 @@ const SearchBarContainer = styled.div`
       background: #004971;
     }
 
-    @media (max-width: 512px) {
-      .searchBar {
-        width: calc(100vw - 210px);
-      }
-    }
+    // @media (max-width: 512px) {
+    //   .searchBar {
+    //     width: calc(100vw - 210px);
+    //   }
+    // }
 `;
 
 const SearchInput = styled.input`

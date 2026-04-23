@@ -342,7 +342,7 @@ const NavBar = () => {
                     <LiSection key={navkey}>
                       <div className="navTitle directLink">
                         {
-                          navMobileItem.id === 'navbar-link-home'
+                          (navMobileItem.id === 'navbar-link-home' || navMobileItem.id === 'navbar-link-datasets')
                             ? (
                                 <a href={navMobileItem.link} target={navMobileItem.external ? "_blank" : null} rel={navMobileItem.external ? "noopener noreferrer" : null}>
                                   <div

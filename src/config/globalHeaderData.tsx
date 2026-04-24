@@ -21,12 +21,14 @@ export const navMobileList = [
     name: 'Home',
     link: '/',
     id: 'navbar-link-home',
+    reloadDocument: true,
     className: 'navMobileItem',
   },
   {
     name: 'Datasets',
     link: '/datasets',
     id: 'navbar-link-datasets',
+    reloadDocument: true,
     className: 'navMobileItem',
   },
   // {

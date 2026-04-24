@@ -234,10 +234,7 @@ const Header = () => {
                         <NavLink
                           id={navMobileItem.id}
                           to={navMobileItem.link}
-                          reloadDocument={
-                            navMobileItem.id === 'navbar-link-home' ||
-                            navMobileItem.id === 'navbar-link-datasets'
-                          }
+                          reloadDocument={navMobileItem.reloadDocument}
                           onClick={() => setNavMobileDisplay('none')}
                         >
                           <div className="navMobileItem">{navMobileItem.name}</div>

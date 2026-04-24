@@ -343,11 +343,9 @@ const NavBar = () => {
                       <div className="navTitle directLink">
                         <NavLink
                           to={navMobileItem.link}
-                          reloadDocument={
-                            navMobileItem.id === 'navbar-link-home' ||
-                            navMobileItem.id === 'navbar-link-datasets'
-                          }
+                          reloadDocument={navMobileItem.reloadDocument}
                           target={navMobileItem.external ? "_blank" : null}
+                          rel={navMobileItem.external ? "noopener noreferrer" : null}
                         >
                           <div
                             id={navMobileItem.id}
@@ -360,37 +358,6 @@ const NavBar = () => {
                             {navMobileItem.name}
                           </div>
                         </NavLink>
-                        {/* {
-                          (navMobileItem.id === 'navbar-link-home' || navMobileItem.id === 'navbar-link-datasets')
-                            ? (
-                                <a href={navMobileItem.link} target={navMobileItem.external ? "_blank" : null} rel={navMobileItem.external ? "noopener noreferrer" : null}>
-                                  <div
-                                    id={navMobileItem.id}
-                                    onKeyDown={onKeyPressHandler}
-                                    role="button"
-                                    tabIndex={0}
-                                    className={`navText directLink ${shouldBeUnderlined(navMobileItem) ? "shouldBeUnderlined" : ""}`}
-                                    onClick={handleMenuClick}
-                                  >
-                                    {navMobileItem.name}
-                                  </div>
-                                </a>
-                            )
-                            : (
-                                <NavLink to={navMobileItem.link} target={navMobileItem.external ? "_blank" : null}>
-                                  <div
-                                    id={navMobileItem.id}
-                                    onKeyDown={onKeyPressHandler}
-                                    role="button"
-                                    tabIndex={0}
-                                    className={`navText directLink ${shouldBeUnderlined(navMobileItem) ? "shouldBeUnderlined" : ""}`}
-                                    onClick={handleMenuClick}
-                                  >
-                                    {navMobileItem.name}
-                                  </div>
-                                </NavLink>
-                            )
-                        } */}
                       </div>
                     </LiSection>
                   )
@@ -431,6 +398,7 @@ const NavBar = () => {
                         id={dropItem.id}
                         to={dropItem.link}
                         target={dropItem.external ? "_blank" : null}
+                        rel={dropItem.external ? "noopener noreferrer" : null}
                         className="dropdownItem"
                         key={dropkey}
                         onClick={() => setClickedTitle("")}
@@ -455,6 +423,7 @@ const NavBar = () => {
                         id={dropItem.id}
                         to={dropItem.link}
                         target={dropItem.external ? "_blank" : null}
+                        rel={dropItem.external ? "noopener noreferrer" : null}
                         className="dropdownItem"
                         key={dropkey}
                         onClick={() => setClickedTitle("")}

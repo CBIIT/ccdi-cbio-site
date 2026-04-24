@@ -247,6 +247,8 @@ const Header = () => {
                           id={navMobileItem.id}
                           to={navMobileItem.link}
                           reloadDocument={navMobileItem.reloadDocument}
+                          target={navMobileItem.external ? "_blank" : null}
+                          rel={navMobileItem.external ? "noopener noreferrer" : null}
                           onClick={() => setNavMobileDisplay('none')}
                         >
                           <div className="navMobileItem">{navMobileItem.name}</div>
@@ -265,7 +267,12 @@ const Header = () => {
                       }
                       {
                         navMobileItem.className === 'navMobileSubItem' &&
-                        <Link id={navMobileItem.id} to={navMobileItem.link}>
+                        <Link
+                          id={navMobileItem.id}
+                          to={navMobileItem.link}
+                          target={navMobileItem.external ? "_blank" : null}
+                          rel={navMobileItem.external ? "noopener noreferrer" : null}
+                        >
                           <div
                             role="button"
                             tabIndex={0}

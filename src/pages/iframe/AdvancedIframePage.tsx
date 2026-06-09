@@ -5,7 +5,7 @@ const AdvancedIframePage: FC<{ id: string, title: string }> = ({id, title}) => {
   const [urlParamsFromHub, setUrlParamsFromHub] = useState('/');
 
   useEffect(() => {
-    const urlParams = window.location.pathname + window.location.search;
+    const urlParams = window.location.pathname + window.location.search + window.location.hash;
     setUrlParamsFromHub(urlParams);
   }, []);
 

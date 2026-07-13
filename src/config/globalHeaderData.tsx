@@ -1,3 +1,4 @@
+import { getWebApiNavLink } from '../utils/envUrls';
 import Logo from '../assets/header/Portal_Logo.svg';
 import LogoSmall from '../assets/header/Portal_Logo_Small.svg';
 import searchbarIcon from '../assets/header/Search_Icon.svg';
@@ -31,13 +32,13 @@ export const navMobileList = [
     reloadDocument: true,
     className: 'navMobileItem',
   },
-  // {
-  //   name: 'Web API',
-  //   link: 'https://docs.cbioportal.org/web-api-and-clients/',
-  //   external: true,
-  //   id: 'navbar-link-web-api',
-  //   className: 'navMobileItem',
-  // },
+  {
+    name: 'Web API',
+    link: getWebApiNavLink(),
+    external: true,
+    id: 'navbar-link-web-api',
+    className: 'navMobileItem',
+  },
   {
     name: 'About',
     link: '',

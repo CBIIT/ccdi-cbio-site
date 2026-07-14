@@ -43,7 +43,7 @@ const IframePage: FC<{ urlParams: string, id: string, title: string }> = ({urlPa
   return (
     <IframeContainer id={`${id}-iframe-container`}>
       <IframeBody
-        srcUrl={joinEnvUrl(process.env.REACT_APP_CCDI_CBIO_IFRAME_URL, urlParams)}
+        srcUrl={joinEnvUrl(process.env.REACT_APP_CCDI_CBIO_IFRAME_URL, urlParams) || 'about:blank'}
         id={id}
         title={title}
         height="600px"

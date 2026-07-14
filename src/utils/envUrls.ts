@@ -1,12 +1,18 @@
 export const CBIO_WEB_API_DOCS_URL = 'https://docs.cbioportal.org/web-api-and-clients/';
 
 export function joinEnvUrl(base: string | undefined, path: string): string {
-  if (!base?.trim()) {
+  const trimmedBase = base?.trim();
+  if (!trimmedBase) {
     return '';
   }
 
-  const normalizedBase = base.replace(/\/+$/, '');
-  const normalizedPath = path.replace(/^\/+/, '');
+  const normalizedBase = trimmedBase.replace(/\/+$/, '');
+  const trimmedPath = path.trim();
+  if (trimmedPath === '/') {
+    return `${normalizedBase}/`;
+  }
+
+  const normalizedPath = trimmedPath.replace(/^\/+/, '');
 
   return normalizedPath ? `${normalizedBase}/${normalizedPath}` : normalizedBase;
 }

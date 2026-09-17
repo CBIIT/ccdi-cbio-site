@@ -1,12 +1,13 @@
 import { FC, useEffect, useState } from 'react';
+import { joinEnvUrl } from '../utils/envUrls';
 
 async function fetchAPIVersion() {
-  const apiVersion = process.env.REACT_APP_API_VERSION;
-  if (!apiVersion) {
-    return { portalVersion: 'REACT_APP_API_VERSION not specified' };
+  const apiInfoUrl = joinEnvUrl(process.env.REACT_APP_CCDI_CBIO_API_URL, '/api/info');
+  if (!apiInfoUrl) {
+    return { portalVersion: 'REACT_APP_CCDI_CBIO_API_URL not specified' };
   }
   try {
-    const response = await fetch(apiVersion, { cache: 'no-store' });
+    const response = await fetch(apiInfoUrl, { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error('Failed to fetch API version');
@@ -21,12 +22,12 @@ async function fetchAPIVersion() {
 }
 
 async function fetchSessionServiceVersion() {
-  const sessionServiceVersion = process.env.REACT_APP_SESSION_SERVICE_VERSION;
-  if (!sessionServiceVersion) {
-    return 'REACT_APP_SESSION_SERVICE_VERSION not specified';
+  const sessionInfoUrl = joinEnvUrl(process.env.REACT_APP_CCDI_CBIO_API_URL, '/api/session/info');
+  if (!sessionInfoUrl) {
+    return 'REACT_APP_CCDI_CBIO_API_URL not specified';
   }
   try {
-    const response = await fetch(sessionServiceVersion, { cache: 'no-store' });
+    const response = await fetch(sessionInfoUrl, { cache: 'no-store' });
 
     if (!response.ok) {
       throw new Error('Failed to fetch Session Service version');
@@ -41,12 +42,12 @@ async function fetchSessionServiceVersion() {
 }
 
 async function getContentUIVersion() {
-  const contentUIVersion = process.env.REACT_APP_CONTENT_UI_VERSION;
-  if (!contentUIVersion) {
-    return 'REACT_APP_CONTENT_UI_VERSION not specified';
+  const contentUiVersionUrl = joinEnvUrl(process.env.REACT_APP_CCDI_CBIO_CONTENT_UI_URL, '/version.json');
+  if (!contentUiVersionUrl) {
+    return 'REACT_APP_CCDI_CBIO_CONTENT_UI_URL not specified';
   }
   try {
-    const response = await fetch(contentUIVersion, { cache: 'no-store' });
+    const response = await fetch(contentUiVersionUrl, { cache: 'no-store' });
     if (!response.ok) throw new Error('Failed to fetch Content UI version');
     const meta = await response.json();
     return meta.version;
@@ -57,12 +58,12 @@ async function getContentUIVersion() {
 }
 
 async function getFrontendVersion() {
-  const frontendVersion = process.env.REACT_APP_FRONTEND_VERSION;
-  if (!frontendVersion) {
-    return 'REACT_APP_FRONTEND_VERSION not specified';
+  const frontendVersionUrl = joinEnvUrl(process.env.REACT_APP_CCDI_CBIO_IFRAME_URL, '/reactapp/version.json');
+  if (!frontendVersionUrl) {
+    return 'REACT_APP_CCDI_CBIO_IFRAME_URL not specified';
   }
   try {
-    const response = await fetch(frontendVersion, { cache: 'no-store' });
+    const response = await fetch(frontendVersionUrl, { cache: 'no-store' });
     if (!response.ok) throw new Error('Failed to fetch Frontend version');
     const meta = await response.json();
     return meta.version;
